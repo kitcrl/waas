@@ -1,0 +1,2 @@
+@sc stop %SERVICE_TITLE%_MONGODB
+@sc delete %SERVICE_TITLE%_MONGODB
