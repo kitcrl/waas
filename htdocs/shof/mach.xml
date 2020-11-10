@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+  <mach0_0>
+    <name>니트 직조기</name>
+    <id>0_0</id>
+    <amount>4</amount>
+    <aname>니트1,니트2,니트3,니트4</aname>
+    <x>70</x>
+    <y>0</y>
+    <image>img/0000.jpg</image>
+    <message>SD-R153-A-M'280-N/G 직조</message>
+    <work>
+      <time>08:00~16:00</time>
+      <manager>이병희</manager>
+      <worker>차재훈,이승룡</worker>
+    </work>
+    <work>
+      <time>16:00~00:00</time>
+      <manager>윤정훈</manager>
+      <worker>이희승,이범우</worker>
+    </work>
+    <work>
+      <time>00:00~08:00</time>
+      <manager>김예은</manager>
+      <worker>이광욱,진상훈</worker>
+    </work>
+  </mach0_0>
+
+  <mach1_0>
+    <name>니트 후가공</name>
+    <id>1_0</id>
+    <amount>1</amount>
+    <aname></aname>
+    <x>320</x>
+    <y>0</y>
+    <image>img/0001.jpg</image>
+    <message>SD-R153-A-M'280-N/G 후가공</message>
+    <work>
+      <time>08:00~16:00</time>
+      <manager>이병희</manager>
+      <worker>차재훈,이승룡</worker>
+    </work>
+    <work>
+      <time>16:00~00:00</time>
+      <manager>윤정훈</manager>
+      <worker>이희승,이범우</worker>
+    </work>
+    <work>
+      <time>00:00~08:00</time>
+      <manager>김예은</manager>
+      <worker>이광욱,진상훈</worker>
+    </work>
+  </mach1_0>
+
+  <mach2_0>
+    <name>비전 검사기</name>
+    <id>2_0</id>
+    <amount>1</amount>
+    <aname></aname>
+    <id>41</id>
+    <x>570</x>
+    <y>0</y>
+    <image>img/0002.jpg</image>
+    <message>SD-R153-A-M'280-N/G 갑피 검사</message>
+    <work>
+      <time>08:00~16:00</time>
+      <manager>이병희</manager>
+      <worker>차재훈,이승룡</worker>
+    </work>
+    <work>
+      <time>16:00~00:00</time>
+      <manager>윤정훈</manager>
+      <worker>이희승,이범우</worker>
+    </work>
+    <work>
+      <time>00:00~08:00</time>
+      <manager>김예은</manager>
+      <worker>이광욱,진상훈</worker>
+    </work>
+  </mach2_0>
+
+
+  <mach3_0>
+    <name>재단기</name>
+    <id>3_0</id>
+    <amount>1</amount>
+    <aname></aname>
+    <x>820</x>
+    <y>0</y>
+    <image>img/0004.jpg</image>
+    <message>SD-R153-A-M'280-N/G 재단</message>
+    <work>
+      <time>08:00~16:00</time>
+      <manager>이병희</manager>
+      <worker>차재훈,이승룡</worker>
+    </work>
+    <work>
+      <time>16:00~00:00</time>
+      <manager>윤정훈</manager>
+      <worker>이희승,이범우</worker>
+    </work>
+    <work>
+      <time>00:00~08:00</time>
+      <manager>김예은</manager>
+      <worker>이광욱,진상훈</worker>
+    </work>
+  </mach3_0>
+
+  <mach4_0>
+    <name>이송로봇</name>
+    <id>4_0</id>
+    <amount>1</amount>
+    <aname></aname>
+    <x>1070</x>
+    <y>70</y>
+    <image>img/0005.jpg</image>
+    <message>SD-R153-A-M'280-N/G 갑피, 부자재 적재창고 이송</message>
+    <work>
+      <time>08:00~16:00</time>
+      <manager>이병희</manager>
+      <worker>차재훈,이승룡</worker>
+    </work>
+    <work>
+      <time>16:00~00:00</time>
+      <manager>윤정훈</manager>
+      <worker>이희승,이범우</worker>
+    </work>
+    <work>
+      <time>00:00~08:00</time>
+      <manager>김예은</manager>
+      <worker>이광욱,진상훈</worker>
+    </work>
+  </mach4_0>
+
+  <mach5_0>
+    <name>3D프린터</name>
+    <id>5_0</id>
+    <amount>4</amount>
+    <aname>프린터1,프린터2,프린터3,프린터4</aname>
+    <x>820</x>
+    <y>145</y>
+    <image>img/0006.jpg</image>
+    <message>SD-R153-A-M'280-N/G 부자재 프린팅</message>
+    <work>
+      <time>08:00~16:00</time>
+      <manager>이병희</manager>
+      <worker>차재훈,이승룡</worker>
+    </work>
+    <work>
+      <time>16:00~00:00</time>
+      <manager>윤정훈</manager>
+      <worker>이희승,이범우</worker>
+    </work>
+    <work>
+      <time>00:00~08:00</time>
+      <manager>김예은</manager>
+      <worker>이광욱,진상훈</worker>
+    </work>
+  </mach5_0>
+
+
+  <mach6_0>
+    <name>갑피주문창고</name>
+    <id>6_0</id>
+    <amount>1</amount>
+    <aname></aname>
+    <x>820</x>
+    <y>290</y>
+    <image>img/0007.jpg</image>
+    <message>SD-R153-A-M'280-N/G 갑피, 부자재 적재창고</message>
+    <work>
+      <time>08:00~16:00</time>
+      <manager>이병희</manager>
+      <worker>차재훈,이승룡</worker>
+    </work>
+    <work>
+      <time>16:00~00:00</time>
+      <manager>윤정훈</manager>
+      <worker>이희승,이범우</worker>
+    </work>
+    <work>
+      <time>00:00~08:00</time>
+      <manager>김예은</manager>
+      <worker>이광욱,진상훈</worker>
+    </work>
+  </mach6_0>
+
+
+  <mach6_1>
+    <name>AGV갑피 적재함</name>
+    <id>6_1</id>
+    <amount>1</amount>
+    <aname></aname>
+    <x>1350</x>
+    <y>145</y>
+    <image>img/0007.jpg</image>
+    <message>SD-R153-A-M'280-N/G 갑피, 부자재 적재창고</message>
+    <work>
+      <time>08:00~16:00</time>
+      <manager>이병희</manager>
+      <worker>차재훈,이승룡</worker>
+    </work>
+    <work>
+      <time>16:00~00:00</time>
+      <manager>윤정훈</manager>
+      <worker>이희승,이범우</worker>
+    </work>
+    <work>
+      <time>00:00~08:00</time>
+      <manager>김예은</manager>
+      <worker>이광욱,진상훈</worker>
+    </work>
+  </mach6_1>
+
+
+
+  <mach6_2>
+    <name>갑피 부자재 창고</name>
+    <id>6_2</id>
+    <amount>1</amount>
+    <aname></aname>
+    <x>1350</x>
+    <y>0</y>
+    <image>img/0007.jpg</image>
+    <message>SD-R153-A-M'280-N/G 갑피, 부자재 적재창고</message>
+    <work>
+      <time>08:00~16:00</time>
+      <manager>이병희</manager>
+      <worker>차재훈,이승룡</worker>
+    </work>
+    <work>
+      <time>16:00~00:00</time>
+      <manager>윤정훈</manager>
+      <worker>이희승,이범우</worker>
+    </work>
+    <work>
+      <time>00:00~08:00</time>
+      <manager>김예은</manager>
+      <worker>이광욱,진상훈</worker>
+    </work>
+  </mach6_2>
+
+
+  <mach7_0>
+    <name>노소프레스</name>
+    <id>7_0</id>
+    <amount>1</amount>
+    <aname></aname>
+    <x>570</x>
+    <y>290</y>
+    <image>img/0008.jpg</image>
+    <message>SD-R153-A-M'280-N/G 프레스</message>
+    <work>
+      <time>08:00~16:00</time>
+      <manager>이병희</manager>
+      <worker>차재훈,이승룡</worker>
+    </work>
+    <work>
+      <time>16:00~00:00</time>
+      <manager>윤정훈</manager>
+      <worker>이희승,이범우</worker>
+    </work>
+    <work>
+      <time>00:00~08:00</time>
+      <manager>김예은</manager>
+      <worker>이광욱,진상훈</worker>
+    </work>
+  </mach7_0>
+
+
+
+  <mach8_0>
+    <name>투입 컨베이어</name>
+    <id>8_0</id>
+    <amount>1</amount>
+    <aname></aname>
+    <x>700</x>
+    <y>290</y>
+    <image>img/0100.jpg</image>
+    <message>투입 컨베이어</message>
+    <work>
+      <time>08:00~16:00</time>
+      <manager>이병희</manager>
+      <worker>차재훈,이승룡</worker>
+    </work>
+    <work>
+      <time>16:00~00:00</time>
+      <manager>윤정훈</manager>
+      <worker>이희승,이범우</worker>
+    </work>
+    <work>
+      <time>00:00~08:00</time>
+      <manager>김예은</manager>
+      <worker>이광욱,진상훈</worker>
+    </work>
+  </mach8_0>
+
+  <mach9_0>
+    <name>배출 컨베이어</name>
+    <id>9_0</id>
+    <amount>1</amount>
+    <aname></aname>
+    <x>700</x>
+    <y>290</y>
+    <image>img/0100.jpg</image>
+    <message>배출 컨베이어</message>
+    <work>
+      <time>08:00~16:00</time>
+      <manager>이병희</manager>
+      <worker>차재훈,이승룡</worker>
+    </work>
+    <work>
+      <time>16:00~00:00</time>
+      <manager>윤정훈</manager>
+      <worker>이희승,이범우</worker>
+    </work>
+    <work>
+      <time>00:00~08:00</time>
+      <manager>김예은</manager>
+      <worker>이광욱,진상훈</worker>
+    </work>
+  </mach9_0>
+
+
+
+
+
+
+
+  <mach1000_0>
+    <name>에어건스프레이</name>
+    <id>1000_0</id>
+    <amount>2</amount>
+    <aname>건1,건2</aname>
+    <x>100</x>
+    <y>0</y>
+    <image>img/0010.jpg</image>
+    <message>SD-R153-A-M'280-N/G 스프레이</message>
+    <work>
+      <time>08:00~16:00</time>
+      <manager>이수산</manager>
+      <worker>문재훈,이광성</worker>
+    </work>
+    <work>
+      <time>16:00~00:00</time>
+      <manager>이정미</manager>
+      <worker>김소율,김우</worker>
+    </work>
+    <work>
+      <time>00:00~08:00</time>
+      <manager>김예은</manager>
+      <worker>차미광,전소미</worker>
+    </work>
+  </mach1000_0>
+
+  <mach1001_0>
+    <name>1본침 재봉기</name>
+    <id>1001_0</id>
+    <amount>2</amount>
+    <aname>재봉기1,재봉기2</aname>
+    <x>400</x>
+    <y>0</y>
+    <image>img/0011.jpg</image>
+    <message>SD-R153-A-M'280-N/G 1선 재봉</message>
+    <work>
+      <time>08:00~16:00</time>
+      <manager>이수산</manager>
+      <worker>문재훈,이광성</worker>
+    </work>
+    <work>
+      <time>16:00~00:00</time>
+      <manager>이정미</manager>
+      <worker>김소율,김우</worker>
+    </work>
+    <work>
+      <time>00:00~08:00</time>
+      <manager>김예은</manager>
+      <worker>차미광,전소미</worker>
+    </work>
+  </mach1001_0>
+
+
+  <mach1002_0>
+    <name>2본침 재봉기</name>
+    <id>1002_0</id>
+    <amount>1</amount>
+    <aname></aname>
+    <x>700</x>
+    <y>0</y>
+    <image>img/0011.jpg</image>
+    <message>SD-R153-A-M'280-N/G 2선 재봉</message>
+    <work>
+      <time>08:00~16:00</time>
+      <manager>이수산</manager>
+      <worker>문재훈,이광성</worker>
+    </work>
+    <work>
+      <time>16:00~00:00</time>
+      <manager>이정미</manager>
+      <worker>김소율,김우</worker>
+    </work>
+    <work>
+      <time>00:00~08:00</time>
+      <manager>김예은</manager>
+      <worker>차미광,전소미</worker>
+    </work>
+  </mach1002_0>
+
+  <mach1003_0>
+    <name>지그재그 재봉기</name>
+    <id>1003_0</id>
+    <amount>2</amount>
+    <aname>재봉기1,재봉기2</aname>
+    <x>1000</x>
+    <y>0</y>
+    <image>img/0013.jpg</image>
+    <message>SD-R153-A-M'280-N/G 지그재그 재봉</message>
+    <work>
+      <time>08:00~16:00</time>
+      <manager>이수산</manager>
+      <worker>문재훈,이광성</worker>
+    </work>
+    <work>
+      <time>16:00~00:00</time>
+      <manager>이정미</manager>
+      <worker>김소율,김우</worker>
+    </work>
+    <work>
+      <time>00:00~08:00</time>
+      <manager>김예은</manager>
+      <worker>차미광,전소미</worker>
+    </work>
+  </mach1003_0>
+
+  <mach1004_0>
+    <name>헤머</name>
+    <id>1004_0</id>
+    <amount>2</amount>
+    <aname>헤머1,헤머2</aname>
+    <x>1300</x>
+    <y>0</y>
+    <image>img/0014.jpg</image>
+    <message>SD-R153-A-M'280-N/G 갑피 평탄화</message>
+    <work>
+      <time>08:00~16:00</time>
+      <manager>이수산</manager>
+      <worker>문재훈,이광성</worker>
+    </work>
+    <work>
+      <time>16:00~00:00</time>
+      <manager>이정미</manager>
+      <worker>김소율,김우</worker>
+    </work>
+    <work>
+      <time>00:00~08:00</time>
+      <manager>김예은</manager>
+      <worker>차미광,전소미</worker>
+    </work>
+  </mach1004_0>
+
+  <mach1005_0>
+    <name>펀칭기</name>
+    <id>1005_0</id>
+    <amount>2</amount>
+    <aname>펀칭기1,펀칭기2</aname>
+    <x>1300</x>
+    <y>140</y>
+    <image>img/0015.jpg</image>
+    <message>SD-R153-A-M'280-N/G 갑피 펀칭</message>
+    <work>
+      <time>08:00~16:00</time>
+      <manager>이수산</manager>
+      <worker>문재훈,이광성</worker>
+    </work>
+    <work>
+      <time>16:00~00:00</time>
+      <manager>이정미</manager>
+      <worker>김소율,김우</worker>
+    </work>
+    <work>
+      <time>00:00~08:00</time>
+      <manager>김예은</manager>
+      <worker>차미광,전소미</worker>
+    </work>
+  </mach1005_0>
+
+  <mach1006_0>
+    <name>백카운터몰딩기</name>
+    <id>1006_0</id>
+    <amount>1</amount>
+    <aname></aname>
+    <x>1000</x>
+    <y>140</y>
+    <image>img/0016.jpg</image>
+    <message>SD-R153-A-M'280-N/G 몰딩</message>
+    <work>
+      <time>08:00~16:00</time>
+      <manager>이수산</manager>
+      <worker>문재훈,이광성</worker>
+    </work>
+    <work>
+      <time>16:00~00:00</time>
+      <manager>이정미</manager>
+      <worker>김소율,김우</worker>
+    </work>
+    <work>
+      <time>00:00~08:00</time>
+      <manager>김예은</manager>
+      <worker>차미광,전소미</worker>
+    </work>
+  </mach1006_0>
+
+
+  <mach1007_0>
+    <name>게더링 재봉기</name>
+    <id>1007_0</id>
+    <amount>1</amount>
+    <aname></aname>
+    <x>700</x>
+    <y>140</y>
+    <image>img/0017.jpg</image>
+    <message>SD-R153-A-M'280-N/G 갑피와 텍션 전체 재봉</message>
+    <work>
+      <time>08:00~16:00</time>
+      <manager>이수산</manager>
+      <worker>문재훈,이광성</worker>
+    </work>
+    <work>
+      <time>16:00~00:00</time>
+      <manager>이정미</manager>
+      <worker>김소율,김우</worker>
+    </work>
+    <work>
+      <time>00:00~08:00</time>
+      <manager>김예은</manager>
+      <worker>차미광,전소미</worker>
+    </work>
+  </mach1007_0>
+
+
+  <mach1008_0>
+    <name>스트로벨기</name>
+    <id>1008_0</id>
+    <amount>1</amount>
+    <aname></aname>
+    <x>400</x>
+    <y>140</y>
+    <image>img/0018.jpg</image>
+    <message>SD-R153-A-M'280-N/G 갑피 스트로벨 재봉</message>
+    <work>
+      <time>08:00~16:00</time>
+      <manager>이수산</manager>
+      <worker>문재훈,이광성</worker>
+    </work>
+    <work>
+      <time>16:00~00:00</time>
+      <manager>이정미</manager>
+      <worker>김소율,김우</worker>
+    </work>
+    <work>
+      <time>00:00~08:00</time>
+      <manager>김예은</manager>
+      <worker>차미광,전소미</worker>
+    </work>
+  </mach1008_0>
+
+
+
+
+
+  <mach1009_0>
+    <name>3컬러 멀티재봉기</name>
+    <id>1009_0</id>
+    <amount>1</amount>
+    <aname></aname>
+    <x>100</x>
+    <y>140</y>
+    <image>img/0019.jpg</image>
+    <message>SD-R153-A-M'280-N/G 컬러 재봉</message>
+    <work>
+      <time>08:00~16:00</time>
+      <manager>이수산</manager>
+      <worker>문재훈,이광성</worker>
+    </work>
+    <work>
+      <time>16:00~00:00</time>
+      <manager>이정미</manager>
+      <worker>김소율,김우</worker>
+    </work>
+    <work>
+      <time>00:00~08:00</time>
+      <manager>김예은</manager>
+      <worker>차미광,전소미</worker>
+    </work>
+  </mach1009_0>
+
+
+
+  <mach1010_0>
+    <name>비전 검사기</name>
+    <id>1010_0</id>
+    <amount>1</amount>
+    <aname></aname>
+    <x>100</x>
+    <y>280</y>
+    <image>img/0020.jpg</image>
+    <message>SD-R153-A-M'280-N/G 갑피 검사</message>
+    <work>
+      <time>08:00~16:00</time>
+      <manager>이수산</manager>
+      <worker>문재훈,이광성</worker>
+    </work>
+    <work>
+      <time>16:00~00:00</time>
+      <manager>이정미</manager>
+      <worker>김소율,김우</worker>
+    </work>
+    <work>
+      <time>00:00~08:00</time>
+      <manager>김예은</manager>
+      <worker>차미광,전소미</worker>
+    </work>
+  </mach1010_0>
+
+
+  <mach1011_0>
+    <name>RFID바구니</name>
+    <id>1011_0</id>
+    <amount>1</amount>
+    <aname></aname>
+    <x>400</x>
+    <y>280</y>
+    <image>img/0021.jpg</image>
+    <message>재봉 완료된 SD-R153-A-M'280-N/G 갑피 생산 진행 현황</message>
+    <work>
+      <time>08:00~16:00</time>
+      <manager>이수산</manager>
+      <worker>문재훈,이광성</worker>
+    </work>
+    <work>
+      <time>16:00~00:00</time>
+      <manager>이정미</manager>
+      <worker>김소율,김우</worker>
+    </work>
+    <work>
+      <time>00:00~08:00</time>
+      <manager>김예은</manager>
+      <worker>차미광,전소미</worker>
+    </work>
+  </mach1011_0>
+</data>

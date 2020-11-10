@@ -1,0 +1,482 @@
+#leftPane, #rightPane
+{
+  float:left;
+  position:relative;
+  border:0px solid #ffffff;
+  background-color:#4C4C4C;
+  text-align:center;
+  vertical-align:middle;
+  color:#FFFFFF;
+  font-family:sans-serif;
+}
+
+#centerPane
+{
+  float:left;
+  position:relative;
+  border:0px solid #000000;
+  background-color:#4C4C4C;
+  text-align:center;
+  vertical-align:middle;
+  color:#FFFFFF;
+  font-family:sans-serif;
+}
+
+
+#layer
+{
+  float:left;
+  position:relative;
+  border:0px solid #000000;
+  background-color:#212121;
+}
+
+#name
+{
+  float:left;
+  position:relative;
+  border:0px solid #000000;
+  width:99.5%;
+  height:80px;
+  background-color:#212121;
+  margin:10px 5px 5px 5px;
+  text-align:center;
+  vertical-align:middle;
+  color:#FFFFFF;
+  font-family:sans-serif;
+}
+
+#menu
+{
+  float:left;
+  position:relative;
+  border:0px solid #000000;
+  background-color:transparent;
+  margin:5px;
+  text-align:center;
+  vertical-align:middle;
+  color:#FFFFFF;
+  font-family:sans-serif;
+}
+
+.title_name
+{
+  float:left; right:15%;
+  position:relative;
+  border:0px solid #000000;
+  width:100%;
+  height:40px;
+  margin:0px 0px 0px 0px;
+  padding:10px 0px 0px 180px;
+  font-size:52px;
+}
+
+.time
+{
+  float:right;
+  position:relative; right:2%; bottom:30%;
+  border:0px solid #000000;
+  margin:0px 0px 0px 0px;
+  padding:10px 10px 10px 10px;
+  font-size:21px;
+}
+
+.title
+{
+  float:left;
+  position:relative;
+  border:0px solid #000000;
+  width:220px;
+  height:28px;
+  margin:0px 0px 0px 0px;
+  padding:4px 0px 4px 0px;
+  font-size:25px;
+  border-radius:8px;
+}
+
+.smenu
+{
+  float:right;
+  position:relative;
+  border:0px solid #000000;
+  width:500px;
+  height:28px;
+  background-color:#747474;
+  margin:0px 15px 0px 0px;
+  padding:8px 30px 0px 30px;
+  font-size:16px;
+  border-radius:8px;
+}
+
+.icon
+{
+  float:left;
+  position:relative;
+  border:1px solid #212121;
+  width:28px;
+  height:28px;
+  margin:-5px 10px 0px 10px;
+  border-radius:3px;
+}
+
+.stext
+{
+  float:left;
+  position:relative; top:10%;
+  border:0px solid #000000;
+  width:;
+  height:30px;
+  margin:-2px 10px 0px 0px;
+}
+
+
+
+
+
+.innerPane
+{
+  float:left;
+  position:relative;
+  border:0px solid #000000;
+  background-color:transparent;
+  margin:0px 0px 0px 0px;
+}
+
+.box
+{
+  position:absolute;
+  z-index: 5;
+  border:0px solid #000000;
+  width:200px;
+  background-color:transparent;
+  margin:5px 5px 5px 5px;
+}
+
+.ibox
+{
+  float:left;
+  position:relative;
+  border:0px solid #000000;
+  width:100%;
+  height:110px;
+  background-color:#F6F6F6;
+  border-radius:13px;
+  max-width:100%;
+  max-height:100%;
+  display:block;
+}
+
+.libox
+{
+  float:left;
+  position:relative;
+  border:0px solid #000000;
+  width:60%;
+  height:100%;
+  background-color:transparent;
+  margin:0px 0px 0px 0px;
+}
+
+.img
+{
+  float:left;
+  cursor: pointer;
+  max-width:95%;
+  max-height:95%;
+  display:block;
+  margin:auto;
+  border-radius:10px;
+  margin-top:2%;
+  margin-left:20%;
+}
+
+.ribox
+{
+  float:right;
+  position:relative;
+  border:0px solid #FF0000;
+  width:37%;
+  height:100%;
+  background-color:transparent;
+  margin-top:10px;
+  margin-left:0px;
+  margin-right:0px;
+  margin-bottom:0px;
+}
+
+.state
+{
+  float:left;
+  position:relative;
+  top:0px;
+  left:0px;
+  border:0px solid #212121;
+  border-bottom:0px solid #000000;
+  width:50%;
+  height:90%;
+  margin: 0px 0px 0px 0px;
+}
+
+.trans_statebox2
+{
+  float:left;
+  position:relative;
+  border:0px solid #212121;
+  width:70%;
+  height:19px;
+  background-color:transparent;
+  margin: 0px 0px 0px 0px;
+}
+
+
+.statebox
+{
+  float:left;
+  position:relative;
+  border:2px solid #212121;
+  width:70%;
+  height:21.8px;
+  background-color:#BDBDBD;
+  margin: -2px 0px 0px 0px;
+}
+.statebox2
+{
+  float:left;
+  position:relative;
+  border:2px solid #212121;
+  width:70%;
+  height:17px;
+  background-color:#BDBDBD;
+  margin: -2px 0px 0px 0px;
+}
+.statebox_t
+{
+  float:left;
+  position:relative;
+  border:0px solid #FF0000;
+  width:100%;
+  height:22px;
+  margin: 2px 0px 2px 0px;
+  font-size:16px;
+  font-size:0.5vw;
+  color:#000000;
+  background-color:transparent;
+}
+
+
+.statebox2_t
+{
+  float:left;
+  position:relative;
+  border:0px solid #FF0000;
+  width:100%;
+  height:17px;
+  margin: 0px 0px 2px 0px;
+  font-size:16px;
+  font-size:0.5vw;
+  color:#000000;
+  background-color:transparent;
+}
+
+
+
+
+.tbox
+{
+  float:left;
+  position:relative;
+  border:0px solid #000000;
+  width:100%;
+  height:15px;
+  background-color:transparent;
+  margin: 0px 0px 0px 0px;
+}
+
+.tb
+{
+  float:left;
+  position:relative;
+  border:0px solid #000000;
+  width:100%;
+  height:100%;
+  background-color:transparent;
+  margin: 0px 0px 0px 0px;
+}
+
+.cell
+{
+  float:left;
+  position:relative;
+  border:0px solid #000000;
+  width:100%;
+  height:100%;
+  font-size:16px;
+  background-color:transparent;
+  margin: 0px 0px 0px 0px;
+}
+
+.cell_half
+{
+  float:left;
+  position:relative;
+  border:0px solid #FFFFFF;
+  width:50%;
+  height:100%;
+  background-color:transparent;
+  margin: 0px 0px 0px 0px;
+}
+
+.textcell
+{
+  position:absolute;
+  display:inline-block;
+  border:0px solid #000000;
+  background-color:transparent;
+  vertical-align:middle;
+  width:100%;
+  height:100%;
+  top:25%;
+  left:0%;
+  cursor: pointer;
+}
+
+.space
+{
+  position:relative;
+  border:0px solid #FFFFFF;
+  width:80px;
+  height:50px;
+  margin: 0px 0px 0px 0px;
+}
+
+
+
+
+
+.Graph_name
+{
+  border:0px solid #000000;
+  margin:30px 0px 20px 0px;
+  padding:0px 0px 0px 0px;
+  font-size:18px;
+  color:#3DB7CC;
+}
+
+.Graph_tbox
+{
+  float:left;
+  position:relative;
+  border:0px solid #000000;
+  width:90%;
+  height:140px;
+  background-color:transparent;
+  margin: 0px 0px 0px 35px;
+}
+
+.Graph_tb
+{
+  float:left;
+  position:relative;
+  border:0px solid #000000;
+  width:100%;
+  height:20%;
+  background-color:transparent;
+  margin: 0px 0px 0px 0px;
+}
+
+.Graph_cell
+{
+  float:left;
+  position:relative;
+  border:0px solid #000000;
+  width:100%;
+  height:100%;
+  font-size:18px;
+  background-color:transparent;
+  margin: 0px 0px 0px 0px;
+}
+
+.Graph_cell_half
+{
+  float:left;
+  position:relative;
+  border:0px solid #FFFFFF;
+  width:50%;
+  height:100%;
+  background-color:transparent;
+  margin: 0px 0px 0px 0px;
+}
+
+
+
+
+
+
+
+
+.backspace
+{
+  float:left;
+  position:absolute; z-index: 1;
+  border:0px solid #FFFFFF;
+  background-color:transparent;
+  margin: 0px 0px 0px 0px;
+}
+
+.bs1
+{
+  float:left;
+  position:relative; top:30%;
+  border:1px solid #EAEAEA;
+  background-color:#BDBDBD;
+  width:15px;
+  height:35px;
+  margin: 0px 1.5px;
+  opacity: 0.3;
+}
+
+.bs2
+{
+  float:left;
+  position:relative; top:30%;
+  border:1px solid #EAEAEA;
+  background-color:#8BBDFF;
+  width:15px;
+  height:35px;
+  margin: 0px 1.5px;
+  opacity: 0.3;
+}
+
+.backspaceside
+{
+  float:left;
+  position:absolute; z-index: 1; top:28.7%;
+  border:0px solid #FFFFFF;
+  background-color:transparent;
+  width:1%;
+  margin: 0px 0px 0px 0px;
+}
+
+.bss1
+{
+  float:left;
+  position:relative;
+  border:1px solid #EAEAEA;
+  background-color:#BDBDBD;
+  width:33px;
+  height:15px;
+  margin: 1.5px 0px;
+  opacity: 0.3;
+}
+
+.bss2
+{
+  float:left;
+  position:relative;
+  border:1px solid #EAEAEA;
+  background-color:#8BBDFF;
+  width:33px;
+  height:15px;
+  margin: 1.5px 0px;
+  opacity: 0.3;
+}

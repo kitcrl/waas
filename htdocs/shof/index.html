@@ -1,0 +1,399 @@
+﻿<!--
+/*****************************************************************************/
+/*                                                                           */
+/*            DVLab (Data Visualization Lab) Web version 1.0                 */
+/*                                                                           */
+/*****************************************************************************/
+/*****************************************************************************/
+/*                                                                           */
+/*  File Name         : index.html                                           */
+/*                                                                           */
+/*  Description       : This file contains all the necessary constants ,     */
+/*                      type definitions according to CAST specifications,	 */
+/*                      common system headers.                               */
+/*                                                                           */
+/*                                                                           */
+/*  Issues / Problems : None                                                 */
+/*                                                                           */
+/*  Revision History  :                                                      */
+/*                                                                           */
+/*        DD MM YYYY   Author(s)        Changes (Describe the changes made)  */
+/*        06 01 2019   Shin Seunghyeok  Draft                                */
+/*        15 11 2019   Shin Seunghyeok  Final Draft                          */
+/*                                                                           */
+/*****************************************************************************/
+-->
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<link type="text/css" href="/codeX/lib/codeXlib.css" rel="stylesheet" media="screen" />
+<link type="text/css" href="index.css" rel="stylesheet" media="screen" />
+<link type="text/css" href="common.css" rel="stylesheet" media="screen" />
+
+<script type="text/javascript" src="/lib/jquery.js"></script>
+<script type="text/javascript" src="/codeX/lib/codeXlib.js"></script>
+<script type="text/javascript" src="/codeX/lib/codeXwebsocket.js"></script>
+<script type="text/javascript" src="/codeX/lib/codeXcontainer.js"></script>
+<script type="text/javascript" src="/codeX/chart/codeXchart.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="index.js"></script>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>DVL System Dashboard</title>
+</head>
+
+<body style="margin:0px;">
+
+<div
+  id="wss_ip"
+  style="display:none;"
+>
+<script>
+  var url = window.location.host;
+  var host = url.split(':');
+  $('#wss_ip').text(host[0]);
+</script>
+</div>
+
+
+<div
+  id="wss_port"
+  style="display:none"
+>7810</div>
+
+
+
+
+<!--div id="page" style="width:1900px;height:980px;background-color:#FFFFFF"-->
+<div id="page" style="width:1919px; height:1079px; background-color:#4C4C4C">
+
+
+  <div id="name">
+
+    <div class="title_name">
+      <img src="img/img_title1.png" style="height:230%; float:left; position:relative; bottom:40%; left:100px;">
+      <img src="img/img_title2.png" style="height:100%;">
+      <b>Upper Leader Productioning Process Monitoring</b>
+    </div>
+
+    <div class="time">
+      <span id="today"></span>
+      <span id="times"></span>
+    </div>
+
+  </div>
+
+  
+
+  <div id="centerPane" style='background-color:transparent;width:85%;height:980px'>
+
+    <div id="layer" style='float:left;position:relative;left:5px;width:1623px;height:480px'> <!-- 재봉준비공정 -->
+  
+      <!-- menu -->
+      <div id="menu" style='width:100%;height:35px;'>
+        <div class="title" style="background-color:#50AF49">
+          <img src='img/img3.png' style="height:100%; float:left; margin-left:13px;">
+          <b>재봉준비공정</b>
+        </div>
+        <div style='width:10px;float:right'>&nbsp;</div>
+        <div class="smenu">
+          <div class="icon" style="background-color:#2478FF;"></div>
+          <div class="stext">Power</div>
+          <div class="icon" style="background-color:#00FF00;"></div>
+          <div class="stext">Run</div>
+          <div class="icon" style="background-color:#FFFF00;"></div>
+          <div class="stext">Idle</div>
+          <div class="icon" style="background-color:#FF0000;"></div>
+          <div class="stext">Down</div>
+        </div>
+      </div>
+      <!-- menu -->
+  
+      <div class="innerPane" style='width:100%;height:410px;'>
+
+
+      <script>
+      {
+        drawConveyor(1, 43, 268, 22, 'H');
+        drawConveyor(2, 5, 1028, 202, 'H');
+        drawConveyor(3, 29, 698, 336, 'H');
+        drawConveyor(4, 11, 1130, 20, 'V');
+        drawConveyor(5, 13, 1280, 114, 'V');
+        drawConveyor(6, 5,  1250, 75, 'H');
+        drawConveyor(7, 2,  1316, 202, 'H');
+      }
+      </script>
+
+
+      <script>
+      {
+        i = 0;
+        ii = 0;
+        limit = 1;
+        k0 = 0;
+        key0 = 0;
+        for ( i = 0 ; i<8 ; i ++ )
+        {
+          if ( i==6 ) limit = 3;
+          else limit = 1;
+
+          for ( ii=0 ; ii<limit ; ii++ )
+          {
+            box_id = 'mach' + i + '_' + ii;
+            ibox_id = 'ibox' + PAD(i, 4) + '_' + PAD(ii, 4);
+            img_id = 'img_' + box_id;
+            j = 0;
+            statebox_t_id0 = 'statebox_t'+PAD(i, 4) + '_' + PAD(ii, 4)+'_'+PAD(j,2); j++;
+            statebox_t_id1 = 'statebox_t'+PAD(i, 4) + '_' + PAD(ii, 4)+'_'+PAD(j,2); j++;
+            statebox_t_id2 = 'statebox_t'+PAD(i, 4) + '_' + PAD(ii, 4)+'_'+PAD(j,2); j++;
+            statebox_t_id3 = 'statebox_t'+PAD(i, 4) + '_' + PAD(ii, 4)+'_'+PAD(j,2); j++;
+            j = 0;
+            statebox_id0 = 'statebox'+PAD(i, 4) + '_' + PAD(ii, 4)+'_'+PAD(j,2); j++;
+            statebox_id1 = 'statebox'+PAD(i, 4) + '_' + PAD(ii, 4)+'_'+PAD(j,2); j++;
+            statebox_id2 = 'statebox'+PAD(i, 4) + '_' + PAD(ii, 4)+'_'+PAD(j,2); j++;
+            statebox_id3 = 'statebox'+PAD(i, 4) + '_' + PAD(ii, 4)+'_'+PAD(j,2); j++;
+            tbox_id = 'tbox' + PAD(i, 4) + '_' + PAD(ii, 4);
+            name_id = 'name_mach' + PAD(i, 4) + '_' + PAD(ii, 4);
+
+            document.write('<div class="box" id=' + box_id + '>');
+            document.write('  <div id="'+ ibox_id + '" class="ibox">');
+            document.write('    <div class="libox"  style="border:0px solid #FF0000">');
+            document.write('      <img id="' + img_id + '" class="img" onclick="setGraphIndex('+ i + ', ' + ii +',0 );popup(\'mach.html?key='+ i + '&skey=' + ii + '&sid=0\', \'_kitdvl\')">');
+            document.write('    </div>');
+            document.write('    <div class="ribox">');
+            document.write('      <div id="state_t" class="state">');
+            document.write('        <div class="statebox_t" id="'+ statebox_t_id0 +'"></div>');
+            document.write('        <div class="statebox_t" id="'+ statebox_t_id1 +'"></div>');
+            document.write('        <div class="statebox_t" id="'+ statebox_t_id2 +'"></div>');
+            document.write('        <div class="statebox_t" id="'+ statebox_t_id3 +'"></div>');
+            document.write('      </div>');
+            document.write('      <div id="state" class="state">');
+            document.write('        <div class="statebox" id="'+ statebox_id0 +'"></div>');
+            document.write('        <div class="statebox" id="'+ statebox_id1 +'"></div>');
+            document.write('        <div class="statebox" id="'+ statebox_id2 +'"></div>');
+            document.write('        <div class="statebox" id="'+ statebox_id3 +'"></div>');
+            document.write('      </div>');
+            document.write('    </div>');
+            document.write('  </div>');
+            document.write('  <div id="' + tbox_id + '" class="tbox">');
+            document.write('    <div class="tb">');
+            document.write('      <div class="cell">');
+            document.write('        <div id="'+ name_id + '" class="textcell"></div>');
+            document.write('      </div>');
+            document.write('    </div>');
+            document.write('  </div>');
+            document.write('</div>');
+          }
+        }
+      }
+      </script>
+
+
+
+      </div> <!-- End of innerPane -->
+    </div> <!-- End of 재봉준비공정 -->
+  
+
+
+
+    <div id="layer" style='float:left;position:relative;left:5px;top:3px;width:1623px;height:480px'> <!-- 재봉공정 -->
+      <!-- menu -->
+      <div id="menu" style='width:100%;height:35px;'>
+        <div class="title" style="background-color:#E0844F">
+          <img src='img/img3.png' style="height:100%; float:left; margin-left:13px;">
+          <b>재봉공정</b>
+        </div>
+        <div style='width:10px;float:right'>&nbsp;</div>
+        <div class="smenu">
+          <div class="icon" style="background-color:#2478FF;"></div>
+          <div class="stext">Power</div>
+          <div class="icon" style="background-color:#00FF00;"></div>
+          <div class="stext">Run</div>
+          <div class="icon" style="background-color:#FFFF00;"></div>
+          <div class="stext">Idle</div>
+          <div class="icon" style="background-color:#FF0000;"></div>
+          <div class="stext">Down</div>
+          <div class="icon" style="background-color:#00FFFF;"></div>
+          <div class="stext">RFID</div>
+        </div>
+      </div>
+
+      <div class="innerPane" style='width:100%;height:420px;'>
+        <!-- barcode -->
+
+        <script>
+        {
+          drawConveyor(10, 62, 304, 40, 'H');
+          drawConveyor(11, 9, 1546, 38, 'V');
+          drawConveyor(12, 74, 64, 180, 'H');
+          drawConveyor(13, 9, 28, 178, 'V');
+          drawConveyor(14, 25, 64, 320, 'H');
+        }
+        </script>
+
+
+      <script>
+      {
+        i = 0;
+        ii = 0;
+        k1 = 0;
+        key1 = 0;
+        for ( i = 1000 ; i<1012 ; i ++ )
+        {
+          box_id = 'mach' + i + '_' + ii;
+          ibox_id = 'ibox' + PAD(i, 4) + '_' + PAD(ii, 4);
+          img_id = 'img_' + box_id;
+          j = 0;
+          statebox2_id0 = 'statebox_t'+PAD(i, 4) + '_' + PAD(ii, 4)+'_'+PAD(j,2); j++;
+          statebox2_id1 = 'statebox_t'+PAD(i, 4) + '_' + PAD(ii, 4)+'_'+PAD(j,2); j++;
+          statebox2_id2 = 'statebox_t'+PAD(i, 4) + '_' + PAD(ii, 4)+'_'+PAD(j,2); j++;
+          statebox2_id3 = 'statebox_t'+PAD(i, 4) + '_' + PAD(ii, 4)+'_'+PAD(j,2); j++;
+          statebox2_id4 = 'statebox_t'+PAD(i, 4) + '_' + PAD(ii, 4)+'_'+PAD(j,2); j++;
+          j = 0;
+          statebox_id0 = 'statebox'+PAD(i, 4) + '_' + PAD(ii, 4)+'_'+PAD(j,2); j++;
+          statebox_id1 = 'statebox'+PAD(i, 4) + '_' + PAD(ii, 4)+'_'+PAD(j,2); j++;
+          statebox_id2 = 'statebox'+PAD(i, 4) + '_' + PAD(ii, 4)+'_'+PAD(j,2); j++;
+          statebox_id3 = 'statebox'+PAD(i, 4) + '_' + PAD(ii, 4)+'_'+PAD(j,2); j++;
+          statebox_id4 = 'statebox'+PAD(i, 4) + '_' + PAD(ii, 4)+'_'+PAD(j,2); j++;
+          tbox_id = 'tbox' + PAD(i, 4) + '_' + PAD(ii, 4);
+          name_id = 'name_mach' + PAD(i, 4) + '_' + PAD(ii, 4);
+
+          document.write('<div class="box" id=' + box_id + '>');
+          document.write('  <div id="'+ ibox_id + '" class="ibox">');
+          document.write('    <div class="libox">');
+          document.write('      <img id="' + img_id + '" class="img" onclick="setGraphIndex('+ i + ',' + ii +', 0);popup(\'mach.html?key='+ i + '&' + 'skey=' + ii + '&sid=0\', \'_kitdvl\')">');
+          document.write('    </div>');
+          document.write('    <div class="ribox">');
+          document.write('      <div id="state_t" class="state" style="backgroud-color:#FF0000">');
+          document.write('        <div class="statebox2_t" id="'+ statebox2_id0 +'"></div>');
+          document.write('        <div class="statebox2_t" id="'+ statebox2_id1 +'"></div>');
+          document.write('        <div class="statebox2_t" id="'+ statebox2_id2 +'"></div>');
+          document.write('        <div class="statebox2_t" id="'+ statebox2_id3 +'"></div>');
+          document.write('        <div class="statebox2_t" id="'+ statebox2_id4 +'"></div>');
+          document.write('      </div>');
+
+          document.write('      <div id="state" class="state">');
+          document.write('        <div class="statebox2" id="'+ statebox_id0 +'"></div>');
+          document.write('        <div class="statebox2" id="'+ statebox_id1 +'"></div>');
+
+          if ( i==1000 || i==1001 || i==1003 || i==1004 || i==1005 )
+          {
+            document.write('        <div class="trans_statebox2"></div>');
+            document.write('        <div class="trans_statebox2"></div>');
+          }
+          else
+          {
+            document.write('        <div class="statebox2" id="'+ statebox_id2 +'"></div>');
+            document.write('        <div class="statebox2" id="'+ statebox_id3 +'"></div>');
+          }
+          document.write('        <div class="statebox2" id="'+ statebox_id4 +'"></div>');
+
+          document.write('      </div>');
+          document.write('    </div>');
+          document.write('  </div>');
+          document.write('  <div id="' + tbox_id + '" class="tbox">');
+          document.write('    <div class="tb">');
+          document.write('      <div class="cell">');
+          document.write('        <div id="'+ name_id + '" class="textcell"></div>');
+          document.write('      </div>');
+          document.write('    </div>');
+          document.write('  </div>');
+          document.write('</div>');
+        }
+      }
+      </script>
+
+
+
+
+      </div> <!-- End of Inner Pane -->
+
+    </div> <!-- 재봉준비공정 -->
+
+
+
+
+
+  </div> <!-- centerPane -->
+
+
+
+
+
+
+  <div id="rightPane" style='width:15%;height:980px'> <!-- rightPane -->
+    <div style="width:100%;height:100%;">
+    
+      <div id="GraphUpper" style="float:left;position:relative;width:100%;height;50%;background-color:#212121">
+        <div class="Graph_name"><b>● Overall Equipment<br/>Effectiveness</b></div>
+
+        <div id = "GraphFst" style="position:relative;float:left;width:100%;height:240px;"></div>
+        <div style='float:left;position:relative;width:100%;height:140px;'>
+          <div style='float:left;position:relative;width:100%;padding:10px 10px 10px 10px;'>
+            <div style='float:left;position:relative;color:#FFFFFF;font:Bold 18px Arial;text-align:left;'>Rotatioanl Speed :</div>
+            <div style='float:left;position:relative;width:10px;'>&nbsp;</div>
+            <div style='float:left;position:relative;color:#FFFFFF;font:Bold 18px Arial;text-align:left;' id='RSpeed'></div>
+          </div>
+          <div style='float:left;position:relative;width:100%;padding:10px 10px 10px 10px;'>
+            <div style='float:left;position:relative;color:#FFFFFF;font:Bold 18px Arial;text-align:left;'>Max Speed :</div>
+            <div style='float:left;position:relative;width:10px;'>&nbsp;</div>
+            <div style='float:left;position:relative;color:#FFFFFF;font:Bold 18px Arial;text-align:left;' id='MaxSpeed'>100 RPM</div>
+          </div>
+          <div style='float:left;position:relative;width:100%;padding:10px 10px 10px 10px;'>
+            <div style='float:left;position:relative;color:#FFFFFF;font:Bold 18px Arial;text-align:left;'>Rotatioanl Direction :</div>
+            <div style='float:left;position:relative;width:10px;'>&nbsp;</div>
+            <div style='float:left;position:relative;color:#FFFFFF;font:Bold 18px Arial;text-align:left;' id='RDirection'>CW</div>
+          </div>
+        </div>
+      </div>
+
+      <div class='horizontalLine'></div>
+
+      <div id="GraphLower" style="float:left;position:relative;width:100%;height;50%;background-color:#212121">
+
+        <div class="Graph_name"><b>● Overall Equipment<br/>Effectiveness</b></div>
+        <div style='float:left;position:relative;color:#FFFFFF;font:Bold 12px Arial;text-align:left;' id='ToD'>Design A</div>
+
+        <div id = "GraphSnd" style="position:relative;float:left;width:100%;height:226px;"></div>
+        <div style='float:left;position:relative;width:100%;height:160px;'>
+          <div style='float:left;position:relative;width:100%;padding:10px 10px 10px 10px;'>
+            <div style='float:left;position:relative;color:#FFFFFF;font:Bold 18px Arial;text-align:left;'>Target :</div>
+            <div style='float:left;position:relative;width:10px;'>&nbsp;</div>
+            <div style='float:left;position:relative;color:#FFFFFF;font:Bold 18px Arial;text-align:left;' id='Target'></div>
+          </div>
+          <div style='float:left;position:relative;width:100%;padding:10px 10px 10px 10px;'>
+            <div style='float:left;position:relative;color:#FFFFFF;font:Bold 18px Arial;text-align:left;'>Result :</div>
+            <div style='float:left;position:relative;width:10px;'>&nbsp;</div>
+            <div style='float:left;position:relative;color:#FFFFFF;font:Bold 18px Arial;text-align:left;' id='Result'> EA</div>
+          </div>
+          <div style='float:left;position:relative;width:100%;padding:10px 10px 10px 10px;'>
+            <div style='float:left;position:relative;color:#FFFFFF;font:Bold 18px Arial;text-align:left;'>Defective Rate :</div>
+            <div style='float:left;position:relative;width:10px;'>&nbsp;</div>
+            <div style='float:left;position:relative;color:#FFFFFF;font:Bold 18px Arial;text-align:left;' id='DRate'> %</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div> <!-- rightPane -->
+
+</div> <!-- page -->
+
+
+
+
+<!--
+<div id="debug"></div>
+-->
+
+</body>
+
+
+
+
+</html>
+
+

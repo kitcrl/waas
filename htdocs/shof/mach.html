@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" href="mach.css" rel="stylesheet" media="screen" />
+
+<script type="text/javascript" src="/lib/jquery.js"></script>
+<script type="text/javascript" src="/codeX/lib/codeXlib.js"></script>
+<script type="text/javascript" src="/codeX/lib/codeXwebsocket.js"></script>
+<script type="text/javascript" src="/codeX/lib/codeXcontainer.js"></script>
+<script type="text/javascript" src="/codeX/chart/codeXchart.js"></script>
+<script type="text/javascript" src="/codeX/chart/codeXprogress.js"></script>
+
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="mach.js"></script>
+
+<title></title>
+
+</head>
+<body style="margin:0px;">
+
+<div
+  id="wss_ip"
+  style="display:none"
+>
+<script>
+  var url = window.location.host;
+  var host = url.split(':');
+  $('#wss_ip').text(host[0]);
+</script>
+</div>
+
+<div
+  id="wss_port"
+  style="display:none"
+>7810</div>
+
+
+<div id="main" style="width:1202px;height:600px;background-color:#4C4C4C;">
+  <div id="leftPane">
+    <div style="background-color:#212121;width:100%;height:100%;">
+      <div style="height:150px;">
+        <b><div id="today"></div></b><br/>
+        <b><div id="times1" style="width:100%;font-size:72px;float:left;position:relative;top:-8px;"></div></b>
+      </div>
+      <div>
+        <div id='mach_info'>
+        </div>
+      </div>
+    </div>
+  </div> <!--leftPane-->
+
+  <div class='verticalLine'></div>
+
+  <div id="centerPane">
+    <div style="background-color:#212121;width:100%;height:100%;">
+      <div class="centerPane00">
+          <div class="name">
+            <script>
+              function list(obj)
+              {
+                changeDesign(obj.value);
+              }
+            </script>
+            <select onchange='javascript:list(this);' style="font-size:17px;top:5px;">
+              <option value='1'>&nbsp;&nbsp;&nbsp;디자인A</option>
+              <option value='2'>&nbsp;&nbsp;&nbsp;디자인B</option>
+              <option value='3'>&nbsp;&nbsp;&nbsp;디자인C</option>
+            </select>
+          </div>
+      </div>
+      <div class='horizontalLine'></div>
+      <div id="centerPaneContent">
+      </div> <!--centerPane-->
+      <div class='horizontalLine'></div>
+
+      <div class="centerPane00">
+        <div class="title_text4" style="margin:10px 10px 0px 10px;"> Message </div>
+        <div class="title_text4" style="margin:10px 0px 0px 0px;" id="M_text00">  </div>
+      </div>
+    </div>
+  </div> <!--centerPaneFrame-->
+
+  <div class='verticalLine'></div>
+
+  <div id="rightPane">
+    <div id="rightPaneMenu" style='background-color:#212121;width:100%;height:100%;'>
+
+    </div>
+  </div> <!--rightPane-->
+
+
+</div>
+</body>
