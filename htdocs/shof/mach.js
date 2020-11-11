@@ -1,7 +1,7 @@
+/******
+ 2020.11.11.17.58
+*******/
 var TOTAL = 1000;
-
-var shof = new cShof();
-
 function displayValues()
 {
   this.total = TOTAL;
@@ -269,14 +269,19 @@ function mach_init_complete()
 
   }
 
-  shof.setParam(q.key, q.skey, q.sid);
-
   $('#mach_info').html(doc).show();
 
   if ( dp.xml.msg != '' )
     $('#M_text00').text(dp.xml.msg);
 
 
+  DrawBackgroundGraph();
+
+}
+
+
+function DrawBackgroundGraph()
+{
 
   if ( q.key == 0 )
   {
@@ -379,6 +384,9 @@ function mach_init_complete()
     $('#M_text00').css('font-size', '20px');
   }
 }
+
+
+
 
 function DrawStrorageStatusDiagram(id, stop_count)
 {
@@ -605,6 +613,14 @@ function is_changed_prod_rate(v, i, ii)
     dp.prevalue = dp.processing;
     r = true;
   }
+
+
+  if ( r == false )
+  {
+    if ( v[17] == 0x02 ) r = true;
+  }
+
+
   return r;
 }
 
@@ -612,101 +628,99 @@ function mach_proc_00(v, i, ii)
 {
   if ( q.key != i ) return;
 
+  if ( (q.key==0) && (q.sid==0) && ( v[1] == 0x0B ) )
   {
-    if ( (shof._key==0) && (shof._sid==0) && ( v[1] == 0x0B ) )
+    if ( is_changed_prod_rate(v, i, ii) == true )
     {
-      if ( is_changed_prod_rate(v, i, ii) == true )
-      {
-        setWorkingTime();
-      }
-      $('#tbox00_tb_01').text(dp.processing + " EA" ); //진행중인 생산량
-      $('#tbox00_tb_02').text(dp.bad + " EA" ); //불량
-      $('#tbox00_tb_00').text( dp.total + " EA" ); //하루 총생산량
-      $('#tbox00_tb_04').text(dp.fail.toFixed(1) + " %" );   /// 불량률
-      $('#tbox00_tb_03').text(dp.success.toFixed(1) + " %" );
-
-      if ( v[12] <= 60 && v[12] >= 0 )
-      {
-        GraphCW.value.v = v[12];
-        GraphCCW.value.v = 0;
-      }
-      else
-      {
-        GraphCW.value.v = 0;
-        GraphCCW.value.v = 257 - (-1*(~v[12]));
-      }
+      setWorkingTime();
     }
-    else if ( (shof._key==0) && (shof._sid==1) && ( v[1] == 0x0C ) )
+    $('#tbox00_tb_01').text(dp.processing + " EA" ); //진행중인 생산량
+    $('#tbox00_tb_02').text(dp.bad + " EA" ); //불량
+    $('#tbox00_tb_00').text( dp.total + " EA" ); //하루 총생산량
+    $('#tbox00_tb_04').text(dp.fail.toFixed(1) + " %" );   /// 불량률
+    $('#tbox00_tb_03').text(dp.success.toFixed(1) + " %" );
+
+    if ( v[12] <= 60 && v[12] >= 0 )
     {
-      if ( is_changed_prod_rate(v, i, ii) == true )
-      {
-        setWorkingTime();
-      }
-
-      $('#tbox00_tb_01').text(dp.processing + " EA" ); //진행중인 생산량
-      $('#tbox00_tb_02').text(dp.bad + " EA" ); //불량
-      $('#tbox00_tb_00').text( dp.total + " EA" ); //하루 총생산량
-      $('#tbox00_tb_04').text(dp.fail.toFixed(1) + " %" );   /// 불량률
-      $('#tbox00_tb_03').text(dp.success.toFixed(1) + " %" );
-
-      if ( v[12] <= 60 && v[12] >= 0 )
-      {
-        GraphCW.value.v = v[12];
-        GraphCCW.value.v = 0;
-      }
-      else
-      {
-        GraphCW.value.v = 0;
-        GraphCCW.value.v = 257 - (-1*(~v[12]));
-      }
+      GraphCW.value.v = v[12];
+      GraphCCW.value.v = 0;
     }
-    else if ( (shof._key==0) && (shof._sid==2) && ( v[1] == 0x0D ) )
+    else
     {
-      if ( is_changed_prod_rate(v, i, ii) == true )
-      {
-        setWorkingTime();
-      }
-
-      $('#tbox00_tb_01').text(dp.processing + " EA" ); //진행중인 생산량
-      $('#tbox00_tb_02').text(dp.bad + " EA" ); //불량
-      $('#tbox00_tb_00').text( dp.total + " EA" ); //하루 총생산량
-      $('#tbox00_tb_04').text(dp.fail.toFixed(1) + " %" );   /// 불량률
-      $('#tbox00_tb_03').text(dp.success.toFixed(1) + " %" );
-
-      if ( v[12] <= 60 && v[12] >= 0 )
-      {
-        GraphCW.value.v = v[12];
-        GraphCCW.value.v = 0;
-      }
-      else
-      {
-        GraphCW.value.v = 0;
-        GraphCCW.value.v = 257 - (-1*(~v[12]));
-      }
+      GraphCW.value.v = 0;
+      GraphCCW.value.v = 257 - (-1*(~v[12]));
     }
-    else if ( (shof._key==0) && (shof._sid==3) && ( v[1] == 0x0E ) )
+  }
+  else if ( (q.key==0) && (q.sid==1) && ( v[1] == 0x0C ) )
+  {
+    if ( is_changed_prod_rate(v, i, ii) == true )
     {
-      if ( is_changed_prod_rate(v, i, ii) == true )
-      {
-        setWorkingTime();
-      }
+      setWorkingTime();
+    }
 
-      $('#tbox00_tb_01').text(dp.processing + " EA" ); //진행중인 생산량
-      $('#tbox00_tb_02').text(dp.bad + " EA" ); //불량
-      $('#tbox00_tb_00').text( dp.total + " EA" ); //하루 총생산량
-      $('#tbox00_tb_04').text(dp.fail.toFixed(1) + " %" );   /// 불량률
-      $('#tbox00_tb_03').text(dp.success.toFixed(1) + " %" );
+    $('#tbox00_tb_01').text(dp.processing + " EA" ); //진행중인 생산량
+    $('#tbox00_tb_02').text(dp.bad + " EA" ); //불량
+    $('#tbox00_tb_00').text( dp.total + " EA" ); //하루 총생산량
+    $('#tbox00_tb_04').text(dp.fail.toFixed(1) + " %" );   /// 불량률
+    $('#tbox00_tb_03').text(dp.success.toFixed(1) + " %" );
 
-      if ( v[12] <= 60 && v[12] >= 0 )
-      {
-        GraphCW.value.v = v[12];
-        GraphCCW.value.v = 0;
-      }
-      else
-      {
-        GraphCW.value.v = 0;
-        GraphCCW.value.v = 257 - (-1*(~v[12]));
-      }
+    if ( v[12] <= 60 && v[12] >= 0 )
+    {
+      GraphCW.value.v = v[12];
+      GraphCCW.value.v = 0;
+    }
+    else
+    {
+      GraphCW.value.v = 0;
+      GraphCCW.value.v = 257 - (-1*(~v[12]));
+    }
+  }
+  else if ( (q.key==0) && (q.sid==2) && ( v[1] == 0x0D ) )
+  {
+    if ( is_changed_prod_rate(v, i, ii) == true )
+    {
+      setWorkingTime();
+    }
+
+    $('#tbox00_tb_01').text(dp.processing + " EA" ); //진행중인 생산량
+    $('#tbox00_tb_02').text(dp.bad + " EA" ); //불량
+    $('#tbox00_tb_00').text( dp.total + " EA" ); //하루 총생산량
+    $('#tbox00_tb_04').text(dp.fail.toFixed(1) + " %" );   /// 불량률
+    $('#tbox00_tb_03').text(dp.success.toFixed(1) + " %" );
+
+    if ( v[12] <= 60 && v[12] >= 0 )
+    {
+      GraphCW.value.v = v[12];
+      GraphCCW.value.v = 0;
+    }
+    else
+    {
+      GraphCW.value.v = 0;
+      GraphCCW.value.v = 257 - (-1*(~v[12]));
+    }
+  }
+  else if ( (q.key==0) && (q.sid==3) && ( v[1] == 0x0E ) )
+  {
+    if ( is_changed_prod_rate(v, i, ii) == true )
+    {
+      setWorkingTime();
+    }
+
+    $('#tbox00_tb_01').text(dp.processing + " EA" ); //진행중인 생산량
+    $('#tbox00_tb_02').text(dp.bad + " EA" ); //불량
+    $('#tbox00_tb_00').text( dp.total + " EA" ); //하루 총생산량
+    $('#tbox00_tb_04').text(dp.fail.toFixed(1) + " %" );   /// 불량률
+    $('#tbox00_tb_03').text(dp.success.toFixed(1) + " %" );
+
+    if ( v[12] <= 60 && v[12] >= 0 )
+    {
+      GraphCW.value.v = v[12];
+      GraphCCW.value.v = 0;
+    }
+    else
+    {
+      GraphCW.value.v = 0;
+      GraphCCW.value.v = 257 - (-1*(~v[12]));
     }
   }
 
@@ -824,9 +838,6 @@ function mach_proc_05(v, i, ii)
 function mach_proc_06(v, i, ii)
 {
 
-  console.log(q.key + ', ' + q.skey);
-
-
   if ( q.key != i ) return;
   if ( q.skey != ii ) return;
 
@@ -872,7 +883,7 @@ function mach_proc_08(v, i, ii)
 {
   if ( q.key != i ) return;
 
-  if ( (shof._key==8) && (shof._sid==0) && ( v[1] == 0x33 ) )
+  if ( (q.key==8) && (q.sid==0) && ( v[1] == 0x33 ) )
   {
     if ( is_changed_prod_rate(v, i, ii) == true )
     {
@@ -898,7 +909,7 @@ function mach_proc_09(v, i, ii)
 {
   if ( q.key != i ) return;
 
-  if ( (shof._key==9) && (shof._sid==0) && ( v[1] == 0x5B ) )
+  if ( (q.key==9) && (q.sid==0) && ( v[1] == 0x5B ) )
   {
     if ( is_changed_prod_rate(v, i, ii) == true )
     {
@@ -1254,6 +1265,9 @@ function mach_callback(arr, sz)
 {
   mach_callback_proc(arr, sz);
   nowTime();
+
+  DrawBackgroundGraph();
+
   return;
 }
 
