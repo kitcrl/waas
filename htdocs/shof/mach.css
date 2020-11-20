@@ -125,7 +125,6 @@ select
 
   appearance:none;
   -webkit-appearance:none;
-  background:url(./img/down.png) no-repeat 1% 50% #212121;
 }
 
 select::-ms-expand

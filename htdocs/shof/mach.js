@@ -274,7 +274,6 @@ function mach_init_complete()
   if ( dp.xml.msg != '' )
     $('#M_text00').text(dp.xml.msg);
 
-
   DrawBackgroundGraph();
 
 }
@@ -282,7 +281,6 @@ function mach_init_complete()
 
 function DrawBackgroundGraph()
 {
-
   if ( q.key == 0 )
   {
     DrawCWGraph('GraphCW');
@@ -532,10 +530,9 @@ function setStatus()
   $('#design00').text('디자인' + dp.design);
 }
 
-
-function setWorkingTime()
+/**************************************************************************
+function setWorkingTime(sr)
 {
-  
   dtime[1] = new Date();
 
 
@@ -551,9 +548,8 @@ function setWorkingTime()
   }
   wtime[1] = PAD(hour,2) + ':' + PAD(min,2) + ':' + PAD(sec,2);
 
-
-  $('#times2').text( wtime[0] );
-  $('#times3').text( wtime[1] );
+  if ( sr == 0x00 ) $('#times3').text( wtime[1] );
+  if ( sr == 0x02 ) $('#times2').text( wtime[0] );
 
   wtime[0] = wtime[1];
 
@@ -577,6 +573,46 @@ function setWorkingTime()
   dtime[0] = dtime[1];
 
 }
+*********************************************************************************/
+function setWorkingTime(sr)
+{
+  if ( sr == 0x00 )
+  {
+    dtime[0] = new Date();
+    hour = dtime[0].getHours();
+    min = dtime[0].getMinutes();
+    sec = dtime[0].getSeconds();
+    wtime[0] = PAD(hour,2) + ':' + PAD(min,2) + ':' + PAD(sec,2);
+    $('#times3').text( wtime[0] );
+  }
+  else if ( sr == 0x02 )
+  {
+    dtime[1] = new Date();
+    hour = dtime[1].getHours();
+    min = dtime[1].getMinutes();
+    sec = dtime[1].getSeconds();
+    wtime[1] = PAD(hour,2) + ':' + PAD(min,2) + ':' + PAD(sec,2);
+    $('#times2').text( wtime[1] );
+
+    $('#times3').text( "00:00:00" );
+    $('#times4').text( "00:00:00" );
+
+    dtime[0] = 0;
+  }
+
+  if ( (dtime[0]!=0) && (dtime[1]!=0) )
+  {
+    g_dtm = Math.round((dtime[0].getTime() - dtime[1].getTime())/1000)*1000;
+    tm = new Date( g_dtm );
+    hour = tm.getHours()-9;
+    min = tm.getMinutes();
+    sec = tm.getSeconds();
+
+    if ( hour >= 0 ) $('#times4').text( PAD(hour,2) + ':' + PAD(min,2) + ':' + PAD(sec,2) );
+    else $('#times4').text( PAD(0,2) + ':' + PAD(0,2) + ':' + PAD(0,2) );
+  }
+}
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -597,7 +633,6 @@ function debug_log(dat, sz)
 
 function is_changed_prod_rate(v, i, ii)
 {
-  var r = false;
   dp.processing = v[4]*256 + v[5];
   dp.bad = v[15]*256 + v[16];
   dp.total = dp.processing + dp.bad;
@@ -608,20 +643,17 @@ function is_changed_prod_rate(v, i, ii)
   if( dp.total == 0 ) dp.total = 0;
   else dp.success = ( dp.processing/TOTAL)*100; 
 
+
+  return v[17];
+
+
+  /****
   if ( dp.prevalue != dp.processing )
   {
     dp.prevalue = dp.processing;
     r = true;
   }
-
-
-  if ( r == false )
-  {
-    if ( v[17] == 0x02 ) r = true;
-  }
-
-
-  return r;
+  ****/
 }
 
 function mach_proc_00(v, i, ii)
@@ -630,10 +662,9 @@ function mach_proc_00(v, i, ii)
 
   if ( (q.key==0) && (q.sid==0) && ( v[1] == 0x0B ) )
   {
-    if ( is_changed_prod_rate(v, i, ii) == true )
-    {
-      setWorkingTime();
-    }
+    r = is_changed_prod_rate(v, i, ii);
+    setWorkingTime(r);
+
     $('#tbox00_tb_01').text(dp.processing + " EA" ); //진행중인 생산량
     $('#tbox00_tb_02').text(dp.bad + " EA" ); //불량
     $('#tbox00_tb_00').text( dp.total + " EA" ); //하루 총생산량
@@ -653,10 +684,8 @@ function mach_proc_00(v, i, ii)
   }
   else if ( (q.key==0) && (q.sid==1) && ( v[1] == 0x0C ) )
   {
-    if ( is_changed_prod_rate(v, i, ii) == true )
-    {
-      setWorkingTime();
-    }
+    r = is_changed_prod_rate(v, i, ii);
+    setWorkingTime(r);
 
     $('#tbox00_tb_01').text(dp.processing + " EA" ); //진행중인 생산량
     $('#tbox00_tb_02').text(dp.bad + " EA" ); //불량
@@ -677,10 +706,8 @@ function mach_proc_00(v, i, ii)
   }
   else if ( (q.key==0) && (q.sid==2) && ( v[1] == 0x0D ) )
   {
-    if ( is_changed_prod_rate(v, i, ii) == true )
-    {
-      setWorkingTime();
-    }
+    r = is_changed_prod_rate(v, i, ii);
+    setWorkingTime(r);
 
     $('#tbox00_tb_01').text(dp.processing + " EA" ); //진행중인 생산량
     $('#tbox00_tb_02').text(dp.bad + " EA" ); //불량
@@ -701,10 +728,8 @@ function mach_proc_00(v, i, ii)
   }
   else if ( (q.key==0) && (q.sid==3) && ( v[1] == 0x0E ) )
   {
-    if ( is_changed_prod_rate(v, i, ii) == true )
-    {
-      setWorkingTime();
-    }
+    r = is_changed_prod_rate(v, i, ii);
+    setWorkingTime(r);
 
     $('#tbox00_tb_01').text(dp.processing + " EA" ); //진행중인 생산량
     $('#tbox00_tb_02').text(dp.bad + " EA" ); //불량
@@ -732,20 +757,16 @@ function mach_proc_00(v, i, ii)
 function mach_proc_01(v, i, ii)
 {
   if ( q.key != i ) return;
-  if ( is_changed_prod_rate(v, i, ii) == true )
-  {
-    setWorkingTime();
-  }
+  r = is_changed_prod_rate(v, i, ii);
+  setWorkingTime(r);
 
   return;
 }
 function mach_proc_02(v, i, ii)
 {
   if ( q.key != i ) return;
-  if ( is_changed_prod_rate(v, i, ii) == true )
-  {
-    setWorkingTime();
-  }
+  r = is_changed_prod_rate(v, i, ii);
+  setWorkingTime(r);
   GraphVisionStatus.value.v = v[17];
 
   return;
@@ -754,10 +775,8 @@ function mach_proc_03(v, i, ii)
 {
   if ( q.key != i ) return;
 
-  if ( is_changed_prod_rate(v, i, ii) == true )
-  {
-    setWorkingTime();
-  }
+  r = is_changed_prod_rate(v, i, ii);
+  setWorkingTime(r);
   $('#tbox00_tb_01').text(dp.processing + " EA" ); //진행중인 생산량
   $('#tbox00_tb_02').text(dp.bad + " EA" ); //불량
   $('#tbox00_tb_00').text(dp.total + " EA" ); //하루 총생산량
@@ -774,11 +793,8 @@ function mach_proc_04(v, i, ii)
 {
   if ( q.key != i ) return;
 
-  if ( is_changed_prod_rate(v, i, ii) == true )
-  {
-    setWorkingTime();
-  }
-
+  r = is_changed_prod_rate(v, i, ii);
+  setWorkingTime(r);
   GraphRobotStatus00.value.v=0;
   GraphRobotStatus01.value.v=0;
   GraphRobotStatus02.value.v=0;
@@ -818,10 +834,8 @@ function mach_proc_05(v, i, ii)
 {
   if ( q.key != i ) return;
 
-  if ( is_changed_prod_rate(v, i, ii) == true )
-  {
-    setWorkingTime();
-  }
+  r = is_changed_prod_rate(v, i, ii);
+  setWorkingTime(r);
 
   var tm = new Date(parseInt(g_dtm));
  
@@ -841,10 +855,8 @@ function mach_proc_06(v, i, ii)
   if ( q.key != i ) return;
   if ( q.skey != ii ) return;
 
-  if ( is_changed_prod_rate(v, i, ii) == true )
-  {
-    setWorkingTime();
-  }
+  r = is_changed_prod_rate(v, i, ii);
+  setWorkingTime(r);
 
   if ( ii == 0 )
   {
@@ -867,10 +879,9 @@ function mach_proc_07(v, i, ii)
 {
   if ( q.key != i ) return;
 
-  if ( is_changed_prod_rate(v, i, ii) == true )
-  {
-    setWorkingTime();
-  }
+  r = is_changed_prod_rate(v, i, ii);
+  setWorkingTime(r);
+
   if ( v[12]>=0 && v[12]<=100 )
   {
     GraphPressureStatus.value.v = v[12];
@@ -885,10 +896,8 @@ function mach_proc_08(v, i, ii)
 
   if ( (q.key==8) && (q.sid==0) && ( v[1] == 0x33 ) )
   {
-    if ( is_changed_prod_rate(v, i, ii) == true )
-    {
-      setWorkingTime();
-    }
+    r = is_changed_prod_rate(v, i, ii);
+    setWorkingTime(r);
 
     if ( v[11] == 0 )
     {
@@ -911,10 +920,8 @@ function mach_proc_09(v, i, ii)
 
   if ( (q.key==9) && (q.sid==0) && ( v[1] == 0x5B ) )
   {
-    if ( is_changed_prod_rate(v, i, ii) == true )
-    {
-      setWorkingTime();
-    }
+    r = is_changed_prod_rate(v, i, ii);
+    setWorkingTime(r);
 
     if ( v[11] == 0 )
     {
@@ -934,60 +941,53 @@ function mach_proc_10(v, i, ii)
 {
   if ( q.key != i ) return;
 
-  if ( is_changed_prod_rate(v, i, ii) == true )
-  {
-    setWorkingTime();
-  }
+  r = is_changed_prod_rate(v, i, ii);
+  setWorkingTime(r);
   return;
 }
 function mach_proc_11(v, i, ii)
 {
   if ( q.key != i ) return;
 
-  if ( is_changed_prod_rate(v, i, ii) == true )
-  {
-    setWorkingTime();
-  }
+  r = is_changed_prod_rate(v, i, ii);
+  setWorkingTime(r);
+
   return;
 }
 function mach_proc_12(v, i, ii)
 {
   if ( q.key != i ) return;
 
-  if ( is_changed_prod_rate(v, i, ii) == true )
-  {
-    setWorkingTime();
-  }
+  r = is_changed_prod_rate(v, i, ii);
+  setWorkingTime(r);
+
   return;
 }
 function mach_proc_13(v, i, ii)
 {
   if ( q.key != i ) return;
 
-  if ( is_changed_prod_rate(v, i, ii) == true )
-  {
-    setWorkingTime();
-  }
+  r = is_changed_prod_rate(v, i, ii);
+  setWorkingTime(r);
+
   return;
 }
 function mach_proc_14(v, i, ii)
 {
   if ( q.key != i ) return;
 
-  if ( is_changed_prod_rate(v, i, ii) == true )
-  {
-    setWorkingTime();
-  }
+  r = is_changed_prod_rate(v, i, ii);
+  setWorkingTime(r);
+
   return;
 }
 function mach_proc_15(v, i, ii)
 {
   if ( q.key != i ) return;
 
-  if ( is_changed_prod_rate(v, i, ii) == true )
-  {
-    setWorkingTime();
-  }
+  r = is_changed_prod_rate(v, i, ii);
+  setWorkingTime(r);
+
   if ( v[12]>=0 && v[12]<=100 )
   {
     GraphPunchingStatus.value.v = v[12];
@@ -1000,10 +1000,9 @@ function mach_proc_16(v, i, ii)
 {
   if ( q.key != i ) return;
 
-  if ( is_changed_prod_rate(v, i, ii) == true )
-  {
-    setWorkingTime();
-  }
+  r = is_changed_prod_rate(v, i, ii);
+  setWorkingTime(r);
+
   return;
 }
 
@@ -1011,30 +1010,26 @@ function mach_proc_17(v, i, ii)
 {
   if ( q.key != i ) return;
 
-  if ( is_changed_prod_rate(v, i, ii) == true )
-  {
-    setWorkingTime();
-  }
+  r = is_changed_prod_rate(v, i, ii);
+  setWorkingTime(r);
+
   return;
 }
 function mach_proc_18(v, i, ii)
 {
   if ( q.key != i ) return;
 
-  if ( is_changed_prod_rate(v, i, ii) == true )
-  {
-    setWorkingTime();
-  }
+  r = is_changed_prod_rate(v, i, ii);
+  setWorkingTime(r);
+
   return;
 }
 function mach_proc_19(v, i, ii)
 {
   if ( q.key != i ) return;
 
-  if ( is_changed_prod_rate(v, i, ii) == true )
-  {
-    setWorkingTime();
-  }
+  r = is_changed_prod_rate(v, i, ii);
+  setWorkingTime(r);
 
   GraphMultiStatus.value.v = v[12];
   GraphMultiQuantityStatus.value.v = v[4]*256 + v[5];
@@ -1044,10 +1039,8 @@ function mach_proc_19(v, i, ii)
 function mach_proc_20(v, i, ii)
 {
   if ( q.key != i ) return;
-  if ( is_changed_prod_rate(v, i, ii) == true )
-  {
-    setWorkingTime();
-  }
+  r = is_changed_prod_rate(v, i, ii);
+  setWorkingTime(r);
   GraphVisionStatus.value.v = v[17];
 
   return;
@@ -1056,11 +1049,8 @@ function mach_proc_21(v, i, ii)
 {
   if ( q.key != i ) return;
 
-  if ( is_changed_prod_rate(v, i, ii) == true )
-  {
-    setWorkingTime();
-  }
-
+  r = is_changed_prod_rate(v, i, ii);
+  setWorkingTime(r);
   $('#tbox00_tb_01').text(dp.processing + " EA" ); //진행중인 생산량
   $('#tbox00_tb_02').text(dp.bad + " EA" ); //불량
   $('#tbox00_tb_00').text(dp.total + " EA" ); //하루 총생산량
@@ -1266,7 +1256,6 @@ function mach_callback(arr, sz)
   mach_callback_proc(arr, sz);
   nowTime();
 
-  DrawBackgroundGraph();
 
   return;
 }
@@ -1402,7 +1391,6 @@ GraphCW.InitChart = function(id, type)
   this.attr.id = id + "Canvas";  /// do not modify
   this.attr.position[0] = 0;  /// do not modify
   this.attr.position[1] = 0;  /// do not modify
-
   _v = $('#'+id).css('width').split('px');
   this.attr.width = _v[0];
   _v = $('#'+id).css('height').split('px');
