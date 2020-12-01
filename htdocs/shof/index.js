@@ -15,7 +15,6 @@ var g_rfid_chk;
 var q = getQuery();
 
 var  mach_proc_XX = new Array(22);
-
 var shof = new cShof();
 
 function set_mach_proc_XX()
