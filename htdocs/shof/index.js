@@ -18,7 +18,6 @@ var  mach_proc_XX = new Array(22);
 
 var shof = new cShof();
 
-
 function set_mach_proc_XX()
 {
   var i = 0;
