@@ -22,7 +22,7 @@ function codeXWebSocket(ip,port,delay,callback)
     this.socket=new WebSocket(this.url);
     this.socket.onopen=function()
     {
-      console.log('connect');
+      console.log('connected');
     };
     this.socket.onmessage=function(msg)
     {
@@ -37,7 +37,7 @@ function codeXWebSocket(ip,port,delay,callback)
     {
       clearTimeout(_this.tmr);
       _this.tmr=setTimeout(_this.connect.bind(_this.socket),_this.delay);			
-      console.log('close');
+      //console.log('close');
     };
   };
 }
