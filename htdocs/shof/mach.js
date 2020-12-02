@@ -207,6 +207,8 @@ function mach_init()
   dp.prevalue = 0;
 
   setStatus();
+
+
 }
 
 
@@ -216,13 +218,10 @@ function mach_init_complete()
   var i;
 
   //if ( dp.xml.amount == 0 ) alert('load error');
-
-
   for ( i=0 ; i<dp.xml.amount ; i++ )
   {
     doc += '<div style="width:100%;background-color:transparent;border:0px solid #F0FF00;cursor:pointer;" ';
     doc += 'onclick=\"';
-    doc += 'setKey('+q.key+','+q.skey+','+i+');';
     doc += 'window.open(\'mach.html?key=';
     doc += q.key;
     doc += '&skey=0&sid=';
@@ -523,9 +522,8 @@ function setStatus()
   if ( q.key >= 1000 ) i = q.key - 990;
 
   loadFile("mach" + q.key + '_' + ii, 0, fname + ".xml", onLoadXML);
-  loadFile("centerPaneContent", 0, fname + "_" + i + ".html", onLoadHTML);
+  loadFile("centerPaneContent", 0, fname + "_" + i +".html", onLoadHTML);
   loadFile("runTimeStatus", 0, fname + "_" + i + "_" + ii +".html", onLoadHTML);
-
   loadFile('rightPaneMenu', q.key , "mach.xml", drawRightPane);
   $('#design00').text('디자인' + dp.design);
 }
@@ -621,18 +619,20 @@ function setWorkingTime(sr)
 
 function debug_log(dat, sz)
 {
-  var dbg;
+  var dbg = ' ';
   var v = new Uint8Array(dat);
 
   for ( i=0 ; i<sz ; i++ )
   {
-    dbg += v[i] + ' ';
+    dbg += PAD(v[i].toString(16), 2) + ' ';
   }
   console.log(dbg);
 }
 
 function is_changed_prod_rate(v, i, ii)
 {
+  dp.success = 0.0;
+  dp.fail = 0.0;
   dp.processing = v[4]*256 + v[5];
   dp.bad = v[15]*256 + v[16];
   dp.total = dp.processing + dp.bad;
@@ -655,6 +655,8 @@ function is_changed_prod_rate(v, i, ii)
   }
   ****/
 }
+
+  
 
 function mach_proc_00(v, i, ii)
 {
@@ -1253,6 +1255,7 @@ function mach_callback_proc(dat, sz)
 
 function mach_callback(arr, sz)
 {
+  debug_log(arr, sz);
   mach_callback_proc(arr, sz);
   nowTime();
 
