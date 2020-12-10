@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Data Networked Analyzing Board</title>
+<link type="text/css" href="zcommon.css" rel="stylesheet" media="screen" />
+<link type="text/css" href="wsgraph.css" rel="stylesheet" media="screen" />
+
+<link class="include" type="text/css" href="lib/jquery.jqplot.min.css" rel="stylesheet" />
+
+<script type="text/javascript" src="lib/jquery.min.js"></script>
+<script type="text/javascript" src="zcommon.js"></script>
+<script type="text/javascript" src="zwebsocket.js"></script>
+<script type="text/javascript" src="zmongodb.js"></script>
+<script type="text/javascript" src="wsgraph.js"></script>
+
+<script type="text/javascript" src="lib/jquery.jqplot.min.js"></script>
+
+<script type="text/javascript" src="plugins/jqplot.categoryAxisRenderer.js"></script>
+<script type="text/javascript" src="plugins/jqplot.barRenderer.js"></script>
+<script type="text/javascript" src="plugins/jqplot.pointLabels.js"></script>
+<script type="text/javascript" src="plugins/jqplot.highlighter.js"></script>
+<script type="text/javascript" src="plugins/jqplot.dateAxisRenderer.min.js"></script>
+
+</head>
+
+<body style="margin:0px;background-image:url('mntback.jpg');background-size:cover;">
+<div id='page'>
+  <div id='page00'>
+    <div id='backboard'>
+      <div id='pane00'>
+        <div id='MenuBar'>
+          <div id='mongoList' onclick="location.href='wscl.html'" style="cursor:pointer;">리스트</div>
+          <div id='graphchange' onclick="location.href='wscm.html'" style="cursor:pointer;">그래프</div>
+          <div id='Logout' onclick="location.href='login.jsp'" style="cursor:pointer;">로그아웃</div>
+        </div>
+        <div id='button_pane'>
+          <div id='button00'>
+          </div>
+          <div id='button01'>
+          </div>
+          <div id='button02'>
+          </div>
+          <div id='button03'>
+          </div>
+        </div>
+      </div>
+      <div id='pane01'>
+        <div id='dcanvas'>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+</body>
+
+</html>

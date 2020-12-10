@@ -1,0 +1,378 @@
+#page
+{
+  position:absolute;
+  border:0px solid #FF0000;
+  width:100%;
+  height:100%;
+  background-color:transparent;
+}
+#page00
+{
+  margin:auto;
+  border:0px solid #FF0000;
+  width:800px;
+  height:600px;
+}
+
+#pane00
+{
+  float:left;
+  border:0px solid #FF0000;
+  width:800px;
+  height:180px;
+  background-color:#EEEEEE;
+  margin:0px 0px 0px 0px;
+}
+
+#pane01
+{
+  float:left;
+  position: relative;
+  top:0px;
+  left: 0px;
+  border:0px solid #000000;
+  width:800px;
+  height:420px;
+  background-color:#EEEEEE;
+  margin:0 auto;
+}
+
+#debug
+{
+  float:left;
+  border:0px solid #FF0000;
+  width:100%;
+  height:100px;
+  background-color:#000000;
+  color:#FFFF00;
+}
+
+
+
+#backboard
+{
+  float:left;
+  border:0px solid #FF0000;
+  width:800px;
+  height:600px;
+  background-color:transparent;
+}
+
+#MenuBar
+{
+  position:relative;
+  border:0px solid #FF0000;
+  left:312px;
+  top:2px;
+  width:200px;
+  height:24px;
+  margin:0px 0px 0px 0px;
+}
+
+#mongoList
+{
+  position:relative;
+  float:left;
+  border:2px solid #CCCCCC;
+  top:0px;
+  width:50px;
+  height:18px;
+  margin:0px 0px 0px 0px;
+}
+
+#graphchange
+{
+  position:relative;
+  float:left;
+  border:2px solid #CCCCCC;
+  top:0px;
+  width:50px;
+  height:18px;
+  margin:0px 0px 0px 0px;
+}
+
+#Logout
+{
+  position:relative;
+  float:left;
+  border:2px solid #CCCCCC;
+  top:0px;
+  width:65px;
+  height:18px;
+  margin:0px 0px 0px 0px;
+}
+
+#button_pane
+{
+  position:relative;
+  border:0px solid #FF0000;
+  left:200px;
+  top:40px;
+  width:410px;
+  height:100px;
+  margin:0px 0px 0px 0px;
+}
+
+#button00
+{
+  position:relative;
+  float:left;
+  border:1px solid #AAAAAA;
+  top:0px;
+  width:100px;
+  height:100px;
+  background-color:#00FF00;
+  margin:0px 0px 0px 0px;
+}
+
+#button01
+{
+  position:relative;
+  float:left;
+  border:1px solid #AAAAAA;
+  top:0px;
+  width:100px;
+  height:100px;
+  background-color:#00FF00;
+  margin:0px 0px 0px 0px;
+}
+
+#button02
+{
+  position:relative;
+  float:left;
+  border:1px solid #AAAAAA;
+  top:0px;
+  width:100px;
+  height:100px;
+  background-color:#00FF00;
+  margin:0px 0px 0px 0px;
+}
+
+#button03
+{
+  position:relative;
+  float:left;
+  border:1px solid #AAAAAA;
+  top:0px;
+  width:100px;
+  height:100px;
+  background-color:#00FF00;
+  margin:0px 0px 0px 0px;
+}
+
+#dcanvas
+{
+  float:left;
+  width:100%;
+  height:100%;
+  border:0px solid #FF0000;
+  margin:auto;
+}
+
+#bbs_pane
+{
+  position:relative;
+  border:1px dotted #AAAAAA;
+  top: -1px;
+  left: -1px;
+  width:100%;
+  height:100%;
+  background-color:#EEEEEE;
+  margin:0px 0px 0px 0px;
+}
+
+#bbs_title_row
+{
+  position:relative;
+  float:left;
+  border:0px dotted #AAAAAA;
+  left:0px;
+  top:5px;
+  width:100%;
+  height:25px;
+  background-color: #FFFFFF;
+}
+
+
+#bbs_content_row
+{
+  position:relative;
+  float:left;
+  border:0px dotted #AAAAAA;
+  left:0px;
+  top:10px;
+  width:100%;
+  height:241px;
+  background-color: #AAAAAA;
+}
+
+#bbs_command_row
+{
+  position:relative;
+  float:left;
+  border:0px dotted #AAAAAA;
+  left:0px;
+  top:10px;
+  width:100%;
+  height:50px;
+}
+
+#no
+{
+  position:relative;
+  border:1px solid #CCCCCC;
+  float:left;
+  left:0px;
+  top:0px;
+  width:8.5%;
+  height:100%;
+  font-weight:bold;
+}
+#tm
+{
+  position:relative;
+  border:1px solid #CCCCCC;
+  float:left;
+  top:0px;
+  width:40%;
+  height:100%;
+  font-weight:bold;
+}
+#title
+{
+  position:relative;
+  border:1px solid #CCCCCC;
+  float:left;
+  top:0px;
+  width:25%;
+  height:100%;
+  font-weight:bold;  
+}
+#L_H
+{
+  position:relative;
+  border:1px solid #CCCCCC;
+  float:left;
+  top:0px;
+  width:25.4%;
+  height:100%;
+  font-weight:bold;  
+}
+
+.no
+{
+  position:relative;
+  border:1px solid #CCCCCC;
+  float:left;
+  left:0px;
+  top:0px;
+  width:8.5%;
+  height:100%;
+  font-size:15pt;
+  font-family:times new romans;
+  color:#23238e;
+}
+.tm
+{
+  position:relative;
+  border:1px solid #CCCCCC;
+  float:left;
+  top:0px;
+  width:40%;
+  height:100%;
+  font-size:15pt;
+  font-family:times new romans;
+  color:#23238e;
+}
+.title
+{
+  position:relative;
+  border:1px solid #CCCCCC;
+  float:left;
+  top:0px;
+  width:25%;
+  height:100%;
+  font-size:15pt;
+  font-family:times new romans;
+  color:#23238e;
+}
+.L_H
+{
+  position:relative;
+  border:1px solid #CCCCCC;
+  float:left;
+  left:0px;
+  top:0px;
+  width:25.4%;
+  height:100%;
+  font-size:15pt;
+  font-family:times new romans;
+  color:#23238e;
+}
+
+#page_list
+{  
+  list-style:none;  
+  float:left;  
+  display:inline;  
+  cursor:pointer
+}  
+#page_list li a 
+{  
+
+    display:-moz-inline-stack;  /*FF2*/  
+    display:inline-block;  
+    vertical-align:top;  
+    padding:-10px;  
+    margin-right:5px;  
+    width:30px !important;  
+    color:#000;  
+    font:12px tahoma;  
+    border:1px solid #eee;  
+    text-align:center;  
+    text-decoration:none;  
+}  
+#page_list li a:hover, ul li a:focus 
+{  
+    color:#fff;  
+    border:1px solid #f40;  
+    background-color:#f40;  
+}  
+
+#option_button
+{  
+	position: relative; 
+	float: right;
+  margin-top:15px;
+	margin-right: 25px;
+  background-color:#AAAAAA;
+}
+#btn_delete
+{
+	position: relative; 
+	float: left;
+  margin:1px 1px 1px 1px;
+  background-color:#EEEEEE;
+}
+
+#filter_type 
+{  
+	position: relative; 
+	float: right;
+	margin-right: 5px;
+}  
+#filter_type label
+{  
+	position: relative; 
+	top: 10px;
+    font:15px tahoma;
+}  
+#filter_type select
+{
+	position: relative;  
+	width: 70px;
+	height: 25px;
+	font:15px tahoma;
+	top: 12px;
+}

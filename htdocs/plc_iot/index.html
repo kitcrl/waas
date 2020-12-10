@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Data Networked Analyzing Board</title>
+<link type="text/css" href="dnaboard.css" rel="stylesheet" media="screen" />
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="dnaboard.js"></script>
+</head>
+
+<body style="margin:0px">
+
+
+  <ol>
+     <li> 1번 </li>
+     <li> 2번 </li>
+  </ol>
+<hr>
+
+<font facecolor='red'>연습</font>
+<hr>
+
+<script type='text/javascript'>
+  document.write(3.14 + 3.14);
+  document.write("<br>");
+  document.write(3.14e2);
+  document.write("<br>");
+  document.write('3.14' + 3.14);
+  document.write("<br>");
+  document.write('3.14' + '3.14');
+  document.write("<br>");
+  document.write('3.14' + '3.14' + 3.14 + 3.14);
+  document.write("<br>");
+  document.write('3.14' + '3.14' + (3.14 + 3.14 ));
+  document.write("<br>");
+
+
+  document.write( 5/3 );
+  document.write("<br>");
+  document.write( 5%3 );
+  document.write("<br>");
+
+
+
+  var a = 65;
+  document.write( a+1 );
+  document.write("<br>");
+  document.write( ++a );
+  document.write("<br>");
+  document.write( a-1 );
+  document.write("<br>");
+  document.write( --a );
+  document.write("<br>");
+  document.write( a+1 );
+  document.write("<br>");
+
+  document.write("<HR>");
+  var j = 0;
+  var k = 1;
+  document.write( j&&k );
+  document.write("<BR>");
+  document.write( j||k );
+  document.write("<BR>");
+  document.write( !j );
+  document.write("<BR>");
+  document.write( !(j&&k) );
+  document.write("<BR>");
+  document.write( !(j||k) );
+  document.write("<BR>");
+
+
+  document.write("<HR>");
+  j = 0x41;
+  k = 0x61;
+  document.write( j & k );
+  document.write("<BR>");
+  document.write( j | k );
+  document.write("<BR>");
+  document.write( (j<<1) & k );
+  document.write("<BR>");
+  document.write( j | (k<<1) );
+  document.write("<BR>");
+
+
+  document.write("<HR>");
+  j = 0x41;
+  k = 0x61;
+  document.write( ~j);
+  document.write("<BR>");
+
+
+
+</script>
+
+<?php
+phpinfo();
+?>
+<!----
+<div id='backboard'>
+  <div id='leftpane'>
+  </div>
+  <div id='centerpane'>
+  </div>
+  <div id='rightpane'>
+  </div>
+</div>
+--->
+</body>
+
+</html>

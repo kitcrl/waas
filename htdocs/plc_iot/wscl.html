@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Data Networked Analyzing Board</title>
+<link type="text/css" href="zcommon.css" rel="stylesheet" media="screen" />
+
+<script type="text/javascript" src="lib/jquery.min.js"></script>
+<script type="text/javascript" src="zcommon.js"></script>
+<script type="text/javascript" src="zwebsocket.js"></script>
+<script type="text/javascript" src="zmongodb.js"></script>
+<script type="text/javascript" src="wscl.js"></script>
+</head>
+
+<body style="margin:0px;background-image:url('mntback.jpg');background-size:cover;">
+<div id='page'>
+  <div id='page00'>
+      <div id='pane00'>
+        <div id='MenuBar'>
+          <div id='mongoList' onclick="location.href='wscl.html'" style="cursor:pointer;">리스트</div>
+          <div id='graphchange' onclick="location.href='wscm.html'" style="cursor:pointer;">그래프</div>
+          <div id='Logout' onclick="location.href='login.jsp'" style="cursor:pointer;">로그아웃</div>
+        </div>
+        <div id='button_pane'>
+          <div id='button00'>
+          </div>
+          <div id='button01'>
+          </div>
+          <div id='button02'>
+          </div>
+          <div id='button03'>
+          </div>
+        </div>
+      </div>
+      <div id='pane01'>
+        <div id = 'dcanvas'>
+          <div id='bbs_pane'>
+            <div id='bbs_title_row'>
+              <div id='no' class='no'>
+              </div>
+              <div id='tm' class='tm'>
+              </div>
+              <div id='title' class='title'>
+              </div>
+              <div id='L_H' class='L_H'>
+              </div>
+            </div>
+            <div id='bbs_content_row'>
+            </div>
+            <div id='bbs_command_row'>
+              <ul id="page_list">
+              </ul>
+              <div id='filter_type'>
+                <label for='out'>OUT</label>
+                <select id="filter_out" onclick='page_display(1)'>
+                  <option value="">all</option>
+                  <option value="OUT1">OUT1</option>
+                  <option value="OUT2">OUT2</option>
+                  <option value="OUT3">OUT3</option>
+                  <option value="OUT4">OUT4</option>
+                </select>
+                <label for='l_h'>L/H</label>
+                <select id="filter_l_h" onclick='page_display(1)'>
+                  <option value="">all</option>
+                  <option value="HIGH">HIGH</option>
+                  <option value="LOW">LOW</option>
+                </select>
+              </div>
+              <div id='option_button'>
+                <div id='btn_delete'>DELETE</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+</body>
+
+</html>
