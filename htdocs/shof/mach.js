@@ -1255,7 +1255,7 @@ function mach_callback_proc(dat, sz)
 
 function mach_callback(arr, sz)
 {
-  debug_log(arr, sz);
+  //debug_log(arr, sz);
   mach_callback_proc(arr, sz);
   nowTime();
 
