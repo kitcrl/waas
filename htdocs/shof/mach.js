@@ -4026,8 +4026,8 @@ GraphCutterStatusAccept.InitChart = function(id, type)
   this.axis.thick =7;
   this.axis.color = '#303030';
   this.axis.radial.center[0] = this.attr.width/2;
-  this.axis.radial.center[1] = this.attr.height/2+20;
-  this.axis.radial.radius[0] = this.axis.radial.radius[1] = this.attr.height/3.0;
+  this.axis.radial.center[1] = this.attr.height/1.7+20;
+  this.axis.radial.radius[0] = this.axis.radial.radius[1] = this.attr.height/3.5;
   this.axis.radial.ccw[0] = 0*Math.PI;
   this.axis.radial.ccw[1] = 2*Math.PI;
   this.axis.radial.gradient.callback = this.DrawText;
@@ -4134,8 +4134,8 @@ GraphCutterStatusDefect.InitChart = function(id, type)
   this.axis.thick =7;
   this.axis.color = '#303030';
   this.axis.radial.center[0] = this.attr.width/2;
-  this.axis.radial.center[1] = this.attr.height/2+20;
-  this.axis.radial.radius[0] = this.axis.radial.radius[1] = this.attr.height/3.0;
+  this.axis.radial.center[1] = this.attr.height/1.7+20;
+  this.axis.radial.radius[0] = this.axis.radial.radius[1] = this.attr.height/3.5;
   this.axis.radial.ccw[0] = 0*Math.PI;
   this.axis.radial.ccw[1] = 2*Math.PI;
   this.axis.radial.gradient.callback = this.DrawText;
