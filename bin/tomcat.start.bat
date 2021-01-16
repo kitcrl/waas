@@ -16,3 +16,4 @@
   --JvmOptions="-Dcatalina.home=%CATALINA_HOME%;-Dcatalina.base=%CATALINA_BASE%;-Djava.io.tmpdir=%CATALINA_BASE%\temp" ^
   --JvmMs=512m ^
   --JvmMx=512m
+@sc start %SERVICE_TITLE%_TOMCAT
