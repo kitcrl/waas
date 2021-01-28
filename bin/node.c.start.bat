@@ -1,2 +1,2 @@
-@sc create %SERVICE_TITLE%_NODE binpath= "%HOME_PATH%\node.c\node.c.x86.exe -display %SERVICE_TITLE%_NODE -service %SERVICE_TITLE%_NODE -config %HOME_PATH%\node.c\config.xml -codex %HOME_PATH%\node.c\code.X.sifr.x86.dll -extdll %HOME_PATH%\node.c\ext -log %HOME_PATH%\node.c\log" start= auto
+@sc create %SERVICE_TITLE%_NODE binpath= "%HOME_PATH%\node.c\node.c.x86.exe -display %SERVICE_TITLE%_NODE -service %SERVICE_TITLE%_NODE -config %HOME_PATH%\node.c\config.xml -codex %HOME_PATH%\node.c\code.X.sifr.x86.dll -extdll %HOME_PATH%\node.c\ext -log %HOME_PATH%\node.c\log -log_expire 2" start= auto
 @sc start %SERVICE_TITLE%_NODE
