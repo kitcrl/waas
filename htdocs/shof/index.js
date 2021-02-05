@@ -247,7 +247,7 @@ function index_timer_proc(obj)
   if ( counter == 0 ) counter = 1;
   else counter = 0;
 
-  codeXWebSocket.socket.write("Hello");
+  //codeXWebSocket.socket.write("Hello");
 
   blinkConveyor(1, 43, counter);
   blinkConveyor(2, 5 , counter);
