@@ -1,0 +1,92 @@
+﻿<!--
+/*****************************************************************************/
+/*                                                                           */
+/*            DVLab (Data Visualization Lab) Web version 1.0                 */
+/*                                                                           */
+/*****************************************************************************/
+/*****************************************************************************/
+/*                                                                           */
+/*  File Name         : index.html                                           */
+/*                                                                           */
+/*  Description       : This file contains all the necessary constants ,     */
+/*                      type definitions according to CAST specifications,	 */
+/*                      common system headers.                               */
+/*                                                                           */
+/*                                                                           */
+/*  Issues / Problems : None                                                 */
+/*                                                                           */
+/*  Revision History  :                                                      */
+/*                                                                           */
+/*        DD MM YYYY   Author(s)        Changes (Describe the changes made)  */
+/*        06 01 2019   Shin Seunghyeok  Draft                                */
+/*        15 11 2019   Shin Seunghyeok  Final Draft                          */
+/*                                                                           */
+/*****************************************************************************/
+-->
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<link type="text/css" href="/codeX/lib/codeXlib.css" rel="stylesheet" media="screen" />
+
+<script type="text/javascript" src="/lib/jquery.js"></script>
+<script type="text/javascript" src="/codeX/lib/codeXlib.js"></script>
+<script type="text/javascript" src="/codeX/lib/codeXwebsocket.js"></script>
+<script type="text/javascript" src="/codeX/lib/codeXcontainer.js"></script>
+<script type="text/javascript" src="/codeX/chart/codeXchart.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="index.js"></script>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>DVL System Dashboard</title>
+</head>
+
+<body style="margin:0px;">
+
+<div
+  id="wss_ip"
+  style="display:none;"
+>
+<script>
+  var url = window.location.host;
+  var host = url.split(':');
+  $('#wss_ip').text(host[0]);
+</script>
+</div>
+
+
+<div
+  id="wss_port"
+  style="display:none"
+>7810</div>
+
+
+
+
+<!--div id="page" style="width:1900px;height:980px;background-color:#FFFFFF"-->
+<div id="page" style="width:640px; height:480px; background-color:#4C4C4C">
+
+<div id="debug" style="float:left;width:100%;height:200px;background-color:#000000;color:#FFFF00"></div>
+<div id="dmsg" style="float:left;width:100%;height:20px;background-color:#000000;color:#FF0000"></div>
+
+
+
+</div> <!-- page -->
+
+
+
+
+<!--
+<div id="debug"></div>
+-->
+
+</body>
+
+
+
+
+</html>
+
+

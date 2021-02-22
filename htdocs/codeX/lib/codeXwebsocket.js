@@ -22,7 +22,6 @@ function codeXWebSocket(ip,port,delay,callback)
     this.socket=new WebSocket(this.url);
     this.socket.onopen=function()
     {
-      console.log('connected');
     };
     this.socket.onmessage=function(msg)
     {
@@ -39,6 +38,11 @@ function codeXWebSocket(ip,port,delay,callback)
       _this.tmr=setTimeout(_this.connect.bind(_this.socket),_this.delay);			
       //console.log('close');
     };
+  };
+
+  this.write = function(msg)
+  {
+    this.socket.send(msg);
   };
 }
 

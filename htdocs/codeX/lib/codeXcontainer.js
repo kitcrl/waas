@@ -37,6 +37,7 @@ function init_container()
   var i = 0;
   var _ip = $('#wss_ip').text();
   var _port = $('#wss_port').text();
+	codeXwebsocket = new codeXWebSocket(_ip, _port, 4000, codeXwscallback);
   
   for ( i=0 ; i<codeXContainer_init.length ; i++ )
   {
@@ -45,7 +46,6 @@ function init_container()
       codeXContainer_init[i]();
     }
   }
-	var codeXwebsocket = new codeXWebSocket(_ip, _port, 4000, codeXwscallback);
 	codeXwebsocket.connect();
   //zWebSocket_connect(zwebsocket, 4000);
 
