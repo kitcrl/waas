@@ -1,2 +1,2 @@
-@sc create %SERVICE_TITLE%_NODE binpath= "%HOME_PATH%\node.c\node.c.x86.exe -m service -d %SERVICE_TITLE%_NODE -s %SERVICE_TITLE%_NODE -c %HOME_PATH%\node.c\config.xml -X %HOME_PATH%\node.c\code.X.sifr.x86.dll -P %HOME_PATH%\node.c\ext -l %HOME_PATH%\node.c\log -e d2" start= auto
+@sc create %SERVICE_TITLE%_NODE binpath= "%HOME_PATH%\node.c\node.c.x86.exe --m service --d %SERVICE_TITLE%_NODE --s %SERVICE_TITLE%_NODE --X %HOME_PATH%\node.c\code.X.x86.dll --P %HOME_PATH%\node.c\plugin --l %HOME_PATH%\node.c\log --e d2 -wssport 7810 -httpport 7818 -home d:\waas\htdocs\ -index index.html" start= auto
 @sc start %SERVICE_TITLE%_NODE
