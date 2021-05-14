@@ -32,7 +32,6 @@ mongodb.start.bat
 mysql.start.bat
 apache.start.bat
 tomcat.start.bat
-node.c.start.bat
 )
 
 @IF  "%1"=="stop" (
@@ -40,5 +39,4 @@ mysql.stop.bat
 mongodb.stop.bat
 apache.stop.bat
 tomcat.stop.bat
-node.c.stop.bat
 )
