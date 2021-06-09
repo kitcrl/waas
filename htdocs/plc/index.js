@@ -20,6 +20,9 @@ function debug_log(dat, sz)
 function index_init()
 {
 	WebSocketServer = get_codeXWebSocket();
+
+	WebSocketServer.write(0x01020304);
+
 }
 
 function index_callback(dat, sz)
@@ -30,5 +33,4 @@ function index_callback(dat, sz)
   debug_log(dat,sz);
 
 	//if ( WebSocketServer == null ) $('#dmsg').text('null');
-	WebSocketServer.write(dat);
 }

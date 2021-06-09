@@ -22,6 +22,7 @@ function codeXWebSocket(ip,port,delay,callback)
     this.socket=new WebSocket(this.url);
     this.socket.onopen=function()
     {
+			console.log("connected");
     };
     this.socket.onmessage=function(msg)
     {
