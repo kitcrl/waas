@@ -1,6 +1,6 @@
-@set HOME_PATH=D:\waas
-@set JAVA_HOME=D:\programs\jdk-15.0.1
-@set JRE_HOME=D:\programs\jdk-15.0.1
+@set HOME_PATH=C:\waas
+@set JAVA_HOME=D:\programs\jdk-16.0.1
+@set JRE_HOME=D:\programs\jdk-16.0.1
 @set SERVICE_TITLE=WAAS
 
 @set DOC_ROOT=%HOME_PATH%\htdocs
