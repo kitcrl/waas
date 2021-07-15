@@ -12,9 +12,13 @@
   <div style='float:left;position:relative;width:600px;height:540px;background-color:#FF0000'>
     <script>
       var i = 0;
+      var backcolor = '#F0F0F0';
+
       for ( i=0 ; i<10 ; i++ )
       {
-        document.write("<div style='float:left;position:relative;width:100%;height:20px;background-color:#00FF00'>Hello....</div>");
+        if ( i%2 == 0 ) backcolor = '#F0F0F0';
+        else backcolor = '#0FFF0F';
+        document.write("<div style='float:left;position:relative;width:100%;height:20px;background-color:" + backcolor + "'>Hello....</div>");
       }
     </script>
 
