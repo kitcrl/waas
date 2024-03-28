@@ -1,5 +1,6 @@
 echo Define SRVROOT "%APACHE_HOME%"                                                                                  > %APACHE_HOME%/conf/httpd.conf
 echo Define DOCROOT "%DOC_ROOT%"                                                                                    >> %APACHE_HOME%/conf/httpd.conf
+echo Define EXTROOT "%EXT_ROOT%"                                                                                    >> %APACHE_HOME%/conf/httpd.conf
 echo ServerRoot "${SRVROOT}"                                                                                        >> %APACHE_HOME%/conf/httpd.conf
 echo Listen 80                                                                                                      >> %APACHE_HOME%/conf/httpd.conf
 echo #LoadModule access_compat_module modules/mod_access_compat.so                                                  >> %APACHE_HOME%/conf/httpd.conf
@@ -152,9 +153,9 @@ echo #     ^</IfModule^>                                                        
 echo #     CustomLog "logs/access.log" common                                                                       >> %APACHE_HOME%/conf/httpd.conf
 echo # ^</IfModule^>                                                                                                >> %APACHE_HOME%/conf/httpd.conf
 echo #                                                                                                              >> %APACHE_HOME%/conf/httpd.conf
-echo ^<IfModule alias_module^>                                                                                      >> %APACHE_HOME%/conf/httpd.conf
-echo     ScriptAlias /cgi-bin/ "${DOCROOT}/cgi-bin/"                                                                >> %APACHE_HOME%/conf/httpd.conf
-echo ^</IfModule^>                                                                                                  >> %APACHE_HOME%/conf/httpd.conf
+echo #^<IfModule alias_module^>                                                                                      >> %APACHE_HOME%/conf/httpd.conf
+echo #    ScriptAlias /cgi-bin/ "${DOCROOT}/cgi-bin/"                                                                >> %APACHE_HOME%/conf/httpd.conf
+echo #^</IfModule^>                                                                                                  >> %APACHE_HOME%/conf/httpd.conf
 echo #                                                                                                              >> %APACHE_HOME%/conf/httpd.conf
 echo ^<IfModule cgid_module^>                                                                                       >> %APACHE_HOME%/conf/httpd.conf
 echo     #Scriptsock logs/cgisock                                                                                   >> %APACHE_HOME%/conf/httpd.conf
@@ -230,3 +231,9 @@ echo 	JkMount /*.jsp worker1                                                    
 echo 	#JkShmFile logs/mod_jk.shm                                                                                    >> %APACHE_HOME%/conf/httpd.conf
 echo 	#JkLogStampformat "[%%a %%b %%d %%H:%%M:%%S %%Y]"                                                             >> %APACHE_HOME%/conf/httpd.conf
 echo ^</IfModule^>                                                                                                  >> %APACHE_HOME%/conf/httpd.conf
+echo Alias /ztec ${EXTROOT}                                                                                         >> %APACHE_HOME%/conf/httpd.conf
+echo ^<Directory "${EXTROOT}"^>                                                                                     >> %APACHE_HOME%/conf/httpd.conf
+echo     Options Indexes FollowSymLinks ExecCGI                                                                     >> %APACHE_HOME%/conf/httpd.conf
+echo     AllowOverride None                                                                                         >> %APACHE_HOME%/conf/httpd.conf
+echo     Require all granted                                                                                        >> %APACHE_HOME%/conf/httpd.conf
+echo ^</Directory^>                                                                                                 >> %APACHE_HOME%/conf/httpd.conf

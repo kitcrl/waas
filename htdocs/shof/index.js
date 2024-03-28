@@ -244,10 +244,18 @@ function drawConveyor(bid, sz, width, height, horz_or_vert)
 
 function index_timer_proc(obj)
 {
+
+  conole.log('index_timer_proc');
+
   if ( counter == 0 ) counter = 1;
   else counter = 0;
 
   //codeXWebSocket.socket.write("Hello");
+  //console.log("write -> Hello ");
+
+
+
+  return 0;
 
   blinkConveyor(1, 43, counter);
   blinkConveyor(2, 5 , counter);
@@ -344,7 +352,7 @@ function onLoadXML(id, code, a)
 function index_init()
 {
   self.resizeTo(1920,1080);
-  
+  console.log('index_init');
 
   for ( i=0; i<mach_proc_XX.length ; i++ )
   {
@@ -356,8 +364,8 @@ function index_init()
   DrawLowerGraph('GraphSnd');   //// <<<<<<<<<<<<<<
 
 
-  //loadFile("mach", 0, "mach.xml", onLoadXML);
   loadFile("mach", 0, "mach.xml", onLoadXML);
+  //loadFile("mach", 0, "mach.xml", onLoadXML);
 
 
 
@@ -1182,7 +1190,7 @@ function GraphSndvalue(v, i, ii)
 var GraphUpper = new codeXchart();
 var GraphLower = new codeXchart();
 
-function DrawUppderGraph(id, i)
+function DrawUppderGraph(id)
 {
   GraphUpper.InitChart(id, 'RADIAL');
   GraphUpper.PeriodicDrawChart(id,GraphUpper.attr.tmr.period);
@@ -1214,7 +1222,7 @@ GraphUpper.InitChart = function(id, type)
   this.attr.dim = '2d';
 
   this.attr.border.color = 'transparent'
-  this.attr.border.type = 'dolid';
+  this.attr.border.type = 'solid';
   this.attr.border.thick=0;
   this.attr.background.color = 'transparent';
 

@@ -1,7 +1,15 @@
-@set HOME_PATH=C:\waas
-@set JAVA_HOME=%HOME_PATH%\tools\jdk-16.0.1
-@set JRE_HOME=%HOME_PATH%\tools\jdk-16.0.1
+@set EXT_ROOT=T:\opt\ua\ztec\htdocs
+
+
+@set HOME_PATH=D:\waas
+@set JAVA_HOME=D:\programs\jdk-16.0.1
+@set JRE_HOME=D:\programs\jdk-16.0.1
 @set SERVICE_TITLE=WAAS
+
+
+
+
+
 
 @set DOC_ROOT=%HOME_PATH%\htdocs
 @set APACHE_HOME=%HOME_PATH%\apache
@@ -32,6 +40,7 @@ mongodb.start.bat
 mysql.start.bat
 apache.start.bat
 tomcat.start.bat
+rem node service.install.js
 )
 
 @IF  "%1"=="stop" (
@@ -39,4 +48,5 @@ mysql.stop.bat
 mongodb.stop.bat
 apache.stop.bat
 tomcat.stop.bat
+rem node service.uninstall.js
 )

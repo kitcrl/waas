@@ -35,9 +35,9 @@ function codeXWebSocket(ip,port,delay,callback)
     };
     this.socket.onclose=function()
     {
+      console.log("close");
       clearTimeout(_this.tmr);
       _this.tmr=setTimeout(_this.connect.bind(_this.socket),_this.delay);			
-      //console.log('close');
     };
   };
 
