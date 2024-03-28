@@ -1,4 +1,4 @@
-@set EXT_ROOT=T:\opt\ua\ztec\htdocs
+@set EXT_ROOT=T:\opt\ua\ztec-cycler\htdocs
 
 
 @set HOME_PATH=D:\waas
