@@ -231,9 +231,18 @@ echo 	JkMount /*.jsp worker1                                                    
 echo 	#JkShmFile logs/mod_jk.shm                                                                                    >> %APACHE_HOME%/conf/httpd.conf
 echo 	#JkLogStampformat "[%%a %%b %%d %%H:%%M:%%S %%Y]"                                                             >> %APACHE_HOME%/conf/httpd.conf
 echo ^</IfModule^>                                                                                                  >> %APACHE_HOME%/conf/httpd.conf
-echo Alias /ztec ${EXTROOT}                                                                                         >> %APACHE_HOME%/conf/httpd.conf
-echo ^<Directory "${EXTROOT}"^>                                                                                     >> %APACHE_HOME%/conf/httpd.conf
-echo     Options Indexes FollowSymLinks ExecCGI                                                                     >> %APACHE_HOME%/conf/httpd.conf
-echo     AllowOverride None                                                                                         >> %APACHE_HOME%/conf/httpd.conf
-echo     Require all granted                                                                                        >> %APACHE_HOME%/conf/httpd.conf
-echo ^</Directory^>                                                                                                 >> %APACHE_HOME%/conf/httpd.conf
+echo ################################################################################                               >> %APACHE_HOME%/conf/httpd.conf
+echo ################################################################################                               >> %APACHE_HOME%/conf/httpd.conf
+echo ################################################################################                               >> %APACHE_HOME%/conf/httpd.conf
+echo ##############################               ###################################                               >> %APACHE_HOME%/conf/httpd.conf
+echo ##############################               ###################################                               >> %APACHE_HOME%/conf/httpd.conf
+echo ##############################               ###################################                               >> %APACHE_HOME%/conf/httpd.conf
+echo ##########################                       ###############################                               >> %APACHE_HOME%/conf/httpd.conf
+echo ############################                   #################################                               >> %APACHE_HOME%/conf/httpd.conf
+echo ##############################               ###################################                               >> %APACHE_HOME%/conf/httpd.conf
+echo ################################           #####################################                               >> %APACHE_HOME%/conf/httpd.conf
+echo ##################################       #######################################                               >> %APACHE_HOME%/conf/httpd.conf
+echo ####################################   #########################################                               >> %APACHE_HOME%/conf/httpd.conf
+echo ################################################################################                               >> %APACHE_HOME%/conf/httpd.conf
+echo ################################################################################                               >> %APACHE_HOME%/conf/httpd.conf
+echo ################################################################################                               >> %APACHE_HOME%/conf/httpd.conf
