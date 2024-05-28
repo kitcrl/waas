@@ -3,9 +3,9 @@ rem
 rem   please reconfigure below variables
 rem
 rem -----------------------------
-@set HOME_PATH=D:\waas
-@set JAVA_HOME=D:\programs\jdk-16.0.1
-@set JRE_HOME=D:\programs\jdk-16.0.1
+@set HOME_PATH=c:\waas
+@set JAVA_HOME=D:\programs\jdk-22
+@set JRE_HOME=D:\programs\jdk-22
 @set SERVICE_TITLE=WAAS
 
 
