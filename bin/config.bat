@@ -8,6 +8,8 @@ call wenv.bat
 @if not exist then mkdir %HOME_PATH%\mongodb\data\diagnostic.data
 @if not exist then mkdir %HOME_PATH%\mongodb\data\journal
 @if not exist then mkdir %HOME_PATH%\mysql\data
+
+php.config.bat
 apache.config.bat
 tomcat.config.bat
 mongodb.config.bat

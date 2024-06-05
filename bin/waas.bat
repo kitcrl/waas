@@ -1,3 +1,6 @@
+call wenv.bat
+
+
 @IF  "%1"=="start" (
 mongodb.start.bat
 mysql.start.bat

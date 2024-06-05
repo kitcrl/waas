@@ -62,7 +62,7 @@ echo #LoadModule lbmethod_bytraffic_module modules/mod_lbmethod_bytraffic.so    
 echo #LoadModule lbmethod_heartbeat_module modules/mod_lbmethod_heartbeat.so                                        >> %APACHE_HOME%/conf/httpd.conf
 echo #LoadModule ldap_module modules/mod_ldap.so                                                                    >> %APACHE_HOME%/conf/httpd.conf
 echo #LoadModule logio_module modules/mod_logio.so                                                                  >> %APACHE_HOME%/conf/httpd.conf
-echo #LoadModule log_config_module modules/mod_log_config.so                                                         >> %APACHE_HOME%/conf/httpd.conf
+echo #LoadModule log_config_module modules/mod_log_config.so                                                        >> %APACHE_HOME%/conf/httpd.conf
 echo #LoadModule log_debug_module modules/mod_log_debug.so                                                          >> %APACHE_HOME%/conf/httpd.conf
 echo #LoadModule log_forensic_module modules/mod_log_forensic.so                                                    >> %APACHE_HOME%/conf/httpd.conf
 echo #LoadModule lua_module modules/mod_lua.so                                                                      >> %APACHE_HOME%/conf/httpd.conf
@@ -153,9 +153,9 @@ echo #     ^</IfModule^>                                                        
 echo #     CustomLog "logs/access.log" common                                                                       >> %APACHE_HOME%/conf/httpd.conf
 echo # ^</IfModule^>                                                                                                >> %APACHE_HOME%/conf/httpd.conf
 echo #                                                                                                              >> %APACHE_HOME%/conf/httpd.conf
-echo #^<IfModule alias_module^>                                                                                      >> %APACHE_HOME%/conf/httpd.conf
-echo #    ScriptAlias /cgi-bin/ "${DOCROOT}/cgi-bin/"                                                                >> %APACHE_HOME%/conf/httpd.conf
-echo #^</IfModule^>                                                                                                  >> %APACHE_HOME%/conf/httpd.conf
+echo #^<IfModule alias_module^>                                                                                     >> %APACHE_HOME%/conf/httpd.conf
+echo #    ScriptAlias /cgi-bin/ "${DOCROOT}/cgi-bin/"                                                               >> %APACHE_HOME%/conf/httpd.conf
+echo #^</IfModule^>                                                                                                 >> %APACHE_HOME%/conf/httpd.conf
 echo #                                                                                                              >> %APACHE_HOME%/conf/httpd.conf
 echo ^<IfModule cgid_module^>                                                                                       >> %APACHE_HOME%/conf/httpd.conf
 echo     #Scriptsock logs/cgisock                                                                                   >> %APACHE_HOME%/conf/httpd.conf
