@@ -9,8 +9,21 @@ call wenv.bat
 @if not exist then mkdir %HOME_PATH%\mongodb\data\journal
 @if not exist then mkdir %HOME_PATH%\mysql\data
 
-php.config.bat
-apache.config.bat
-tomcat.config.bat
-mongodb.config.bat
-mysql.config.bat
+echo "apache configuration"
+call apache.config.bat
+
+
+echo "php configuration"
+call php.config.bat
+
+
+echo "tomcat configuration"
+call tomcat.config.bat
+
+
+echo "mongodb configuration"
+call mongodb.config.bat
+
+
+echo "mysql configuration"
+call mysql.config.bat
