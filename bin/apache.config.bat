@@ -215,10 +215,10 @@ echo ^<IfModule http2_module^>                                                  
 echo     ProtocolsHonorOrder On                                                                                     >> %APACHE_HOME%/conf/httpd.conf
 echo     Protocols h2 h2c http/1.1                                                                                  >> %APACHE_HOME%/conf/httpd.conf
 echo ^</IfModule^>                                                                                                  >> %APACHE_HOME%/conf/httpd.conf
-echo # php 8                                                                                                        >> %APACHE_HOME%/conf/httpd.conf
-echo # LoadFile "%PHP_HOME%\php8ts.dll"                                                                             >> %APACHE_HOME%/conf/httpd.conf
+echo # php 7                                                                                                        >> %APACHE_HOME%/conf/httpd.conf
 echo PHPIniDir "%PHP_HOME%"                                                                                         >> %APACHE_HOME%/conf/httpd.conf
-echo LoadModule php_module "%PHP_HOME%\php8apache2_4.dll"                                                           >> %APACHE_HOME%/conf/httpd.conf
+echo LoadFile "%PHP_HOME%/php7ts.dll"                                                                               >> %APACHE_HOME%/conf/httpd.conf
+echo LoadModule php7_module "%PHP_HOME%/php7apache2_4.dll"                                                          >> %APACHE_HOME%/conf/httpd.conf
 echo AddType application/x-httpd-php .php                                                                           >> %APACHE_HOME%/conf/httpd.conf
 echo #                                                                                                              >> %APACHE_HOME%/conf/httpd.conf
 echo LoadModule jk_module modules/mod_jk.so                                                                         >> %APACHE_HOME%/conf/httpd.conf
