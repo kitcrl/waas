@@ -1,18 +1,23 @@
 call wenv.bat
 
+@IF  "%1"=="config" (
+call config.bat
+)
+
+
 
 @IF  "%1"=="start" (
-mongodb.start.bat
-mysql.start.bat
-apache.start.bat
-tomcat.start.bat
+call mongodb.start.bat
+call mysql.start.bat
+call apache.start.bat
+call tomcat.start.bat
 rem node service.install.js
 )
 
 @IF  "%1"=="stop" (
-mysql.stop.bat
-mongodb.stop.bat
-apache.stop.bat
-tomcat.stop.bat
+call mysql.stop.bat
+call mongodb.stop.bat
+call apache.stop.bat
+call tomcat.stop.bat
 rem node service.uninstall.js
 )
