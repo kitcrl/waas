@@ -30,7 +30,21 @@
   try
   {
     stmt = conn.createStatement();
-    rs = stmt.executeQuery(qry);
+
+    out.println(qry);
+
+    if ( stmt.executeUpdate(qry) > 0 )
+    {
+      out.println("Update Sucess");
+    }
+
+
+    // rs = stmt.executeQuery(qry);
+
+    // while ( rs.next() )
+    // {
+      // //out.println(rs.getString());
+    // }
   }
   catch( SQLException ex)
   {
@@ -45,6 +59,10 @@
     {
       stmt.close();
       out.println(" Query Success ");
+    }
+    if ( conn != null )
+    {
+      conn.close();
     }
   }
 
