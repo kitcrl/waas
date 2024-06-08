@@ -227,7 +227,7 @@ echo 	JkWorkersFile conf/workers.properties                                     
 echo 	#JkLogFile logs/mod_jk.log                                                                                    >> %APACHE_HOME%/conf/httpd.conf
 echo 	#JkLogLevel info                                                                                              >> %APACHE_HOME%/conf/httpd.conf
 echo 	#JkMount /* worker1                                                                                           >> %APACHE_HOME%/conf/httpd.conf
-echo 	JkMount /*.jsp worker1                                                                                        >> %APACHE_HOME%/conf/httpd.conf
+echo 	JkMount /*.jsp  worker1                                                                                       >> %APACHE_HOME%/conf/httpd.conf
 echo 	#JkShmFile logs/mod_jk.shm                                                                                    >> %APACHE_HOME%/conf/httpd.conf
 echo 	#JkLogStampformat "[%%a %%b %%d %%H:%%M:%%S %%Y]"                                                             >> %APACHE_HOME%/conf/httpd.conf
 echo ^</IfModule^>                                                                                                  >> %APACHE_HOME%/conf/httpd.conf

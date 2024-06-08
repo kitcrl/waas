@@ -13,7 +13,7 @@ flush privileges;
 
 
 CREATE TABLE litedb.litedbliteboard(
-	id INT PRIMARY KEY,
+	id INT,
 	tmstmp TIMESTAMP DEFAULT NOW(),
 	title TEXT,
 	contents TEXT,

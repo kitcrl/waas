@@ -49,7 +49,7 @@ var common = require("./__common.js");
 // console.log("#                                                                              #");
 // console.log("#                                                                              #");
 // console.log("################################################################################");
-// httpd_fd = httpd.open("--httpd_port 80 --httpd_home /opt/htdocs --httpd_index index.html --httpd_size_of_buffer 1024", httpd_callback);
+// //httpd_fd = httpd.open("--httpd_port 80 --httpd_home /opt/htdocs --httpd_index index.html --httpd_size_of_buffer 1024", httpd_callback);
 
 
 // console.log("################################################################################");
@@ -66,7 +66,7 @@ console.log("#                               websocket START                    
 console.log("#                                                                              #");
 console.log("#                                                                              #");
 console.log("################################################################################");
-wsd_fd = wsd.open("--websocket_url http://127.0.0.1:8091/ --websocket_cstype SERVER --websocket_size_of_buffer 1024", wsd_callback);
+wsd_fd = wsd.open("--websocket_url http://127.0.0.1:8901/ --websocket_cstype SERVER --websocket_size_of_buffer 1024", wsd_callback);
 
 
 var sck = require("./out/liteio_socket_x86_64.node");
@@ -77,7 +77,8 @@ console.log("#                               socket START                       
 console.log("#                                                                              #");
 console.log("#                                                                              #");
 console.log("################################################################################");
-sck_fd = sck.open("--socket_ip 127.0.0.1 --socket_port 49243 --socket_cstype CLENT --socket_protocol TCP --socket_casttype UNICAST --socket_size_of_buffer 2048", sck_callback);
+//sck_fd = sck.open("--socket_ip 127.0.0.1 --socket_port 49243 --socket_cstype CLENT --socket_protocol TCP --socket_casttype UNICAST --socket_size_of_buffer 2048", sck_callback);
+sck_fd = sck.open("--socket_ip 127.0.0.1 --socket_port 8800 --socket_cstype SERVER --socket_protocol TCP --socket_casttype UNICAST --socket_size_of_buffer 2048", sck_callback);
 
 
 function toHex(v)
@@ -137,7 +138,7 @@ function wsd_callback(fd, buf, sz)
 
 function sck_callback(fd, buf, sz)
 {
-  console.log("\r\n\r\n\r\n\r\nsck_callback :", sz, ", ", toHex(sz).toString(16).toUpperCase(), ", ", fd, ":", wsd_fd);
+  console.log("\r\n\r\n\r\n\r\nsck_callback :", sz, ", ", toHex(sz).toString(16).toUpperCase(), ", ", fd, ":", sck_fd);
 
   if ( sz <=0 )
   {
@@ -154,7 +155,7 @@ function sck_callback(fd, buf, sz)
                   str += ('0' + (byte & 0xFF).toString(16)).slice(-2) + " ";
               });
 
-    console.log('wsd_callback -> ', sz ,':', str);
+    console.log('sck_callback -> ', sz ,':', str);
   }
 }
 
