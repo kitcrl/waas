@@ -1,4 +1,4 @@
-@echo off
+li@echo off
 rem -----------------------------
 rem
 rem   please reconfigure below variables
