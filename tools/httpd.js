@@ -80,7 +80,7 @@ console.log("#                                                                  
 console.log("#                                                                              #");
 console.log("################################################################################");
 //sck_fd = sck.open("--socket_ip 127.0.0.1 --socket_port 49243 --socket_cstype CLENT --socket_protocol TCP --socket_casttype UNICAST --socket_size_of_buffer 2048", sck_callback);
-sck_fd = sck.open("--socket_ip 127.0.0.1 --socket_port 50005 --socket_cstype CLENT --socket_protocol TCP --socket_casttype UNICAST --socket_size_of_buffer 2048", sck_callback);
+sck_fd = sck.open("--socket_ip 127.0.0.1 --socket_port 50005 --socket_cstype CLENT --socket_protocol TCP --socket_casttype UNICAST --socket_size_of_buffer 2048 --socket_callback_id 0 --socket_timeout 4000", sck_callback);
 
 
 function toHex(v)
