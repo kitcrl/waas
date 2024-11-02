@@ -20,6 +20,9 @@ var _wsd_periodic_proc;
 var _wsd_client_fd = 0;
 var _sck_periodic_proc;
 var _sck_client_fd = 0;
+
+
+var PREFIX = "WSC  > ";
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 //////                                                                   //////
@@ -41,6 +44,38 @@ var _sck_client_fd = 0;
 /************************************* ***************************************/
 /*****************************************************************************/
 var common = require("./__common.js");
+var mysql = require("mysql2");
+
+var dbinfo = {
+  host: "192.168.0.178",
+  user: "crl",
+  password: "00000000"
+};
+
+var conn = mysql.createConnection(dbinfo);
+var myconn = 0;
+function onConnCallback(err)
+{
+  if ( err) throw err;
+  console.log(
+    "+-------------------------+\r\n" +
+    "|                         |\r\n" +
+    "| " + dbinfo.host + " Connected |\r\n" +
+    "|                         |\r\n" +
+    "+-------------------------+\r\n");
+  myconn = 1;
+}
+
+conn.connect(onConnCallback);
+
+
+function onQueryCallback(err, result)
+{
+  if (err) throw err;
+  console.log(PREFIX + "Result : " + result);
+}
+
+
 
 
 
@@ -123,7 +158,14 @@ function wsd_callback(fd, buf, sz)
     dbg += HEX(buf[i]) + " ";
   }
 
-  console.log("wsd_callback(" , _wfd , "," , dbg , "," , sz , ")");
+  console.log(PREFIX + "wsd_callback(" , _wfd , "," , dbg , "," , sz , ")");
+  if ( myconn == 1 )
+  {
+    sql = "insert into litedb.litesample(msg) values ('" + dbg + "')";
+    console.log(PREFIX + sql);
+    conn.query(sql, onQueryCallback);
+    conn.query("commit", onQueryCallback);
+  }
 
   return;
 }
@@ -134,7 +176,7 @@ function wsd_periodic_proc(obj)
   if ( _wfd > 0)
   {
     err = wsd.write(parseInt(_wfd, 10), "ABCD", 4);
-    console.log(err, " = wsd.write : ", parseInt(_wfd, 10));
+    console.log(PREFIX + err, " = wsd.write : ", parseInt(_wfd, 10));
   }
   clearTimeout(_wsd_periodic_proc)
   _wsd_periodic_proc = setTimeout(wsd_periodic_proc, 1000, obj);
